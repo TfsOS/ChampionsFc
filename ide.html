@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UEFA Champions</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .left {
+      width: 40%;
+      background-color: black;
+      color: white;
+      display: flex;
+     
+      justify-content: center;
+      padding-left: 5%;
+    }
+
+    .left h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    .left h2 {
+      font-size: 1.5em;
+      margin-top: 10px;
+      font-weight: normal;
+      opacity: 0.75;
+    }
+
+   
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h1>UEFA Champions</h1>
+      <h2>by TGames Studio</h2>
+    </div>
+    
+     
+    </div>
+  </div>
+
+  <audio autoplay loop>
+    <source src="fifa22.mp3" type="audio/mpeg" autoplay>
+  </audio>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "main.html";
+    }, 6000);
+  </script>
+</body>
+</html>

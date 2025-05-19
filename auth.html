@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FC Champions - Login/Register</title>
+  <style>
+    * {
+      font-family: 'Segoe UI', sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #121212;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .auth-container {
+      background: #1e1e1e;
+      padding: 30px;
+      border-radius: 12px;
+      width: 320px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .tabs button {
+      flex: 1;
+      padding: 10px;
+      background: none;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+    }
+
+    .tabs button.active {
+      border-color: #00ffae;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 6px;
+    }
+
+    button.submit {
+      width: 100%;
+      background: #00ffae;
+      color: black;
+      font-weight: bold;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .message {
+      margin-top: 10px;
+      color: #00ffae;
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <div class="tabs">
+      <button id="loginTab" class="active">Login</button>
+      <button id="registerTab">Register</button>
+    </div>
+
+    <div id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Email" />
+      <input type="password" id="loginPassword" placeholder="Password" />
+      <button class="submit" onclick="login()">Login</button>
+    </div>
+
+    <div id="registerForm" style="display:none;">
+      <input type="text" id="registerUsername" placeholder="Username" />
+      <input type="email" id="registerEmail" placeholder="Email" />
+      <input type="password" id="registerPassword" placeholder="Password" />
+      <button class="submit" onclick="register()">Register</button>
+    </div>
+
+    <div class="message" id="message"></div>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBo1xhOxx4iuM6Xt79jaSeJgkV3Sxy6bzs",
+      authDomain: "football-game-e0754.firebaseapp.com",
+      projectId: "football-game-e0754",
+      storageBucket: "football-game-e0754.firebasestorage.app",
+      messagingSenderId: "441771009724",
+      appId: "1:441771009724:web:1472cd5c3f6daaf1c792b9"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const loginTab = document.getElementById('loginTab');
+    const registerTab = document.getElementById('registerTab');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const message = document.getElementById('message');
+
+    loginTab.onclick = () => {
+      loginTab.classList.add('active');
+      registerTab.classList.remove('active');
+      loginForm.style.display = 'block';
+      registerForm.style.display = 'none';
+      message.textContent = '';
+    };
+
+    registerTab.onclick = () => {
+      registerTab.classList.add('active');
+      loginTab.classList.remove('active');
+      registerForm.style.display = 'block';
+      loginForm.style.display = 'none';
+      message.textContent = '';
+    };
+
+    window.register = () => {
+      const username = document.getElementById('registerUsername').value;
+      const email = document.getElementById('registerEmail').value;
+      const password = document.getElementById('registerPassword').value;
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          localStorage.setItem('username', username);
+          message.textContent = 'Registration successful!';
+        })
+        .catch(err => {
+          message.textContent = err.message;
+        });
+    };
+
+    window.login = () => {
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then(userCredential => {
+          const username = localStorage.getItem('username') || 'Player One';
+          message.textContent = `Welcome back, ${username}!`;
+         
+           window.location.href = 'main.html';
+        })
+        .catch(err => {
+          message.textContent = err.message;
+        });
+    };
+  </script>
+</body>
+</html>

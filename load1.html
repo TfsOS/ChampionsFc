@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ChampionsFc</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: black;
+      color: white;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+      position: relative;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 4em;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 2em;
+      font-weight: normal;
+      opacity: 0.75;
+      margin-top: 10px;
+    }
+
+    #musicToggle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 1.5em;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 14px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="musicToggle">🔊</div>
+    <h1>UEFA Champions</h1>
+    <h2>by TGames Studio</h2>
+  </div>
+
+  <audio id="bgMusic" autoplay loop>
+    <source src="fifa22.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const bgMusic = document.getElementById('bgMusic');
+    const musicToggle = document.getElementById('musicToggle');
+
+    musicToggle.addEventListener('click', () => {
+      if (bgMusic.paused) {
+        bgMusic.play();
+        musicToggle.textContent = '🔊';
+      } else {
+        bgMusic.pause();
+        musicToggle.textContent = '🔇';
+      }
+    });
+
+    setTimeout(() => {
+      window.location.href = "main.html";
+    }, 6000);
+  </script>
+</body>
+</html>

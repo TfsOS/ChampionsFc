@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inventory</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: white;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .user-info img {
+      height: 32px;
+      border-radius: 5px;
+    }
+    .user-info span {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    .top-icons {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .back-btn {
+      background: #00ffae;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .inventory-container {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .player-card {
+      background: #222;
+      padding: 16px;
+      border-radius: 12px;
+      width: 200px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .player-card h3 {
+      margin: 0 0 6px;
+    }
+
+    .player-card p {
+      margin: 0 0 6px;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="user-info">
+     
+      <span id="usernameDisplay">Player One</span>
+    </div>
+    <div class="top-icons">
+      <span id="coins">🪙 0</span>
+      <button class="back-btn" onclick="location.href='shop.html'">← Back to Shop</button>
+      <span id="musicToggle">🔊</span>
+    </div>
+  </div>
+
+  <div class="inventory-container" id="inventory">
+    <!-- Purchased players will be listed here -->
+  </div>
+
+  <audio id="bgMusic" autoplay loop>
+    <source src="shop.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    const coinsDisplay = document.getElementById('coins');
+    const inventoryContainer = document.getElementById('inventory');
+    const bgMusic = document.getElementById('bgMusic');
+    const musicToggle = document.getElementById('musicToggle');
+
+    const coins = parseInt(localStorage.getItem('coins')) || 0;
+    coinsDisplay.textContent = `🪙 ${coins}`;
+
+    const inventory = JSON.parse(localStorage.getItem('inventory')) || [];
+
+    if (inventory.length === 0) {
+      inventoryContainer.innerHTML = "<p>You haven't purchased any players yet.</p>";
+    } else {
+      inventory.forEach(player => {
+        const card = document.createElement('div');
+        card.className = 'player-card';
+        card.innerHTML = `
+          <h3>${player.name}</h3>
+          <p>Club: ${player.club}</p>
+          <p>Price: ${player.price} coins</p>
+        `;
+        inventoryContainer.appendChild(card);
+      });
+    }
+
+    musicToggle.addEventListener('click', () => {
+      if (bgMusic.paused) {
+        bgMusic.play();
+        musicToggle.textContent = '🔊';
+      } else {
+        bgMusic.pause();
+        musicToggle.textContent = '🔇';
+      }
+    });
+
+    const savedUsername = localStorage.getItem('username');
+    if (savedUsername) {
+      document.getElementById('usernameDisplay').textContent = savedUsername;
+    }
+  </script>
+</body>
+</html>

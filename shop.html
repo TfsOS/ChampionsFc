@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FC Shop</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: white;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .user-info img {
+      height: 32px;
+      border-radius: 5px;
+    }
+    .user-info span {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    .top-icons {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .inventory-btn {
+      background: #00ffae;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .shop-container {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .player-card {
+      background: #222;
+      padding: 16px;
+      border-radius: 12px;
+      width: 200px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .player-card h3 {
+      margin: 0 0 6px;
+    }
+
+    .player-card p {
+      margin: 0 0 12px;
+      font-size: 0.95em;
+    }
+
+    .buy-btn {
+      background: #00ffae;
+      color: black;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="user-info">
+      
+      <span id="usernameDisplay">Player One</span>
+    </div>
+    <div class="top-icons">
+      <span id="coins">🪙 500</span>
+      <button class="inventory-btn" onclick="location.href='inventory.html'">Inventory</button>
+      <span id="musicToggle">🔊</span>
+    </div>
+  </div>
+
+  <div class="shop-container" id="shop">
+    <!-- Player cards will be added here -->
+  </div>
+
+  <audio id="bgMusic" autoplay loop>
+    <source src="shop.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    const coinsDisplay = document.getElementById('coins');
+    const bgMusic = document.getElementById('bgMusic');
+    const musicToggle = document.getElementById('musicToggle');
+
+    const players = [
+      { name: "Cristiano Ronaldo", price: 200, club: "Al-Nassr" },
+      { name: "Lionel Messi", price: 250, club: "Inter Miami" },
+      { name: "Kylian Mbappé", price: 220, club: "PSG" },
+      { name: "Erling Haaland", price: 230, club: "Manchester City" }
+    ];
+
+    const shop = document.getElementById('shop');
+
+    let coins = parseInt(localStorage.getItem('coins')) || 500;
+    let inventory = JSON.parse(localStorage.getItem('inventory')) || [];
+
+    coinsDisplay.textContent = `🪙 ${coins}`;
+
+    players.forEach(player => {
+      const card = document.createElement('div');
+      card.className = 'player-card';
+      card.innerHTML = `
+        <h3>${player.name}</h3>
+        <p>Club: ${player.club}</p>
+        <p>Price: ${player.price} coins</p>
+        <button class="buy-btn">Buy</button>
+      `;
+      const btn = card.querySelector('.buy-btn');
+      btn.addEventListener('click', () => {
+        if (coins >= player.price && !inventory.find(p => p.name === player.name)) {
+          coins -= player.price;
+          inventory.push(player);
+          localStorage.setItem('coins', coins);
+          localStorage.setItem('inventory', JSON.stringify(inventory));
+          coinsDisplay.textContent = `🪙 ${coins}`;
+          alert(`${player.name} bought!`);
+        } else if (inventory.find(p => p.name === player.name)) {
+          alert("Already purchased.");
+        } else {
+          alert("Not enough coins.");
+        }
+      });
+      shop.appendChild(card);
+    });
+
+    musicToggle.addEventListener('click', () => {
+      if (bgMusic.paused) {
+        bgMusic.play();
+        musicToggle.textContent = '🔊';
+      } else {
+        bgMusic.pause();
+        musicToggle.textContent = '🔇';
+      }
+    });
+
+    const savedUsername = localStorage.getItem('username');
+    if (savedUsername) {
+      document.getElementById('usernameDisplay').textContent = savedUsername;
+    }
+  </script>
+</body>
+</html>
