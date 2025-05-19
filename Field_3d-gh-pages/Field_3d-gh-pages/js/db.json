@@ -1,0 +1,266 @@
+{
+  "db": [
+    {
+      "fullname": "Federación Colombiana de Fútbol",
+      "name": "Colombia",
+      "code": "COL",
+      "technical": "Jose Nestor Pekerman",
+      "players": [
+        {
+          "position": "goalkeeper",
+          "name": "D. Ospina",
+          "fullname": "David Ospina"
+        },{
+          "position": "defense lateral",
+          "name": "P. Armero",
+          "fullname": "Pablo Armero"
+        },{
+          "position": "defense central",
+          "name": "C. Zapata",
+          "fullname": "Cristian Zapata"
+        },{
+          "position": "defense central",
+          "name": "J. Murillo",
+          "fullname": "Jeison Murillo"
+        },{
+          "position": "defense lateral",
+          "name": "C. Zuñiga",
+          "fullname": "Camilo Zuñiga"
+        },{
+          "position": "flyers central",
+          "name": "C. Sánchez",
+          "fullname": "Carlos Sánchez"
+        },{
+          "position": "flyers central",
+          "name": "J. Rodríguez",
+          "fullname": "James Rodríguez"
+        },{
+          "position": "flyers lateral",
+          "name": "E. Cardona",
+          "fullname": "Edwin Cardona"
+        },{
+          "position": "flyers lateral",
+          "name": "J. Cuadrado",
+          "fullname": "Juan Guillermo Cuadrado"
+        },{
+          "position": "forward lateral",
+          "name": "C. Bacca",
+          "fullname": "Carlos Bacca"
+        },{
+          "position": "forward lateral",
+          "name": "R. Falcao",
+          "fullname": "Radamel Falcao"
+        }
+      ]
+    },
+    {
+      "fullname": "Asociación de Fútbol Argentina",
+      "name": "Argentina",
+      "code": "ARG",
+      "technical": "Gerardo Daniel Martino",
+      "players": [
+        {
+          "position": "goalkeeper",
+          "name": "S. Romero",
+          "fullname": "Sergio Romero"
+        },{
+          "position": "defense lateral",
+          "name": "M. Rojo",
+          "fullname": "Marcos Rojo"
+        },{
+          "position": "defense central",
+          "name": "R. Funes Mori",
+          "fullname": "Ramiro Funes Mori"
+        },{
+          "position": "defense central",
+          "name": "N. Otamendi",
+          "fullname": "Nicolás Otamendi"
+        },{
+          "position": "defense lateral",
+          "name": "J. Maidana",
+          "fullname": "Jonathan Maidana"
+        },{
+          "position": "flyers central",
+          "name": "J. Mascherano",
+          "fullname": "Javier Mascherano"
+        },{
+          "position": "flyers central",
+          "name": "É. Banega",
+          "fullname": "Éver Banega"
+        },{
+          "position": "flyers lateral",
+          "name": "E. Lamela",
+          "fullname": "Erik Lamela"
+        },{
+          "position": "flyers lateral",
+          "name": "J. Pastore",
+          "fullname": "Javier Pastore"
+        },{
+          "position": "forward lateral",
+          "name": "L. Messi",
+          "fullname": "Lionel Messi"
+        },{
+          "position": "forward lateral",
+          "name": "G. Higuaín",
+          "fullname": "Gonzalo Higuaín"
+        }
+      ]
+    },{
+      "fullname": "Confederación Brasileña De Fútbol",
+      "name": "Brasil",
+      "code": "BRA",
+      "technical": "Dunga",
+      "players": [
+        {
+          "position": "goalkeeper",
+          "name": "A. Becker",
+          "fullname": "Alisson Becker"
+        },{
+          "position": "defense lateral",
+          "name": "D. Alves",
+          "fullname": "Dani Alves"
+        },{
+          "position": "defense central",
+          "name": "F. Luís",
+          "fullname": "Filipe Luís"
+        },{
+          "position": "defense central",
+          "name": "Fabinho",
+          "fullname": "Fabinho"
+        },{
+          "position": "defense lateral",
+          "name": "Miranda",
+          "fullname": "Miranda"
+        },{
+          "position": "flyers central",
+          "name": "Casemiro",
+          "fullname": "Casemiro"
+        },{
+          "position": "flyers central",
+          "name": "L. Lima",
+          "fullname": "Lucas Lima"
+        },{
+          "position": "flyers lateral",
+          "name": "William",
+          "fullname": "William"
+        },{
+          "position": "flyers lateral",
+          "name": "L. Moura",
+          "fullname": "Lucas Moura"
+        },{
+          "position": "forward lateral",
+          "name": "Hulk",
+          "fullname": "Hulk"
+        },{
+          "position": "forward lateral",
+          "name": "Jonas",
+          "fullname": "Jonas"
+        }
+      ]
+    },{
+      "fullname": "Federación Ecuatoriana de Fútbol",
+      "name": "Ecuador",
+      "code": "ECU",
+      "technical": "Gustavo Quinteros",
+      "players": [
+        {
+          "position": "goalkeeper",
+          "name": "A. Domínguez",
+          "fullname": "Alexander Domínguez"
+        },{
+          "position": "defense lateral",
+          "name": "J. Paredes",
+          "fullname": "Juan Carlos Paredes"
+        },{
+          "position": "defense central",
+          "name": "A. Mina",
+          "fullname": "Arturo Mina"
+        },{
+          "position": "defense central",
+          "name": "F. Erazo",
+          "fullname": "Frickson Erazo"
+        },{
+          "position": "defense lateral",
+          "name": "W. Ayovi",
+          "fullname": "Walter Ayovi"
+        },{
+          "position": "flyers central",
+          "name": "J. Montero",
+          "fullname": "Jefferson Montero"
+        },{
+          "position": "flyers central",
+          "name": "J. Cazares",
+          "fullname": "Juan Cazares"
+        },{
+          "position": "flyers lateral",
+          "name": "A. Valencia",
+          "fullname": "Antonio Valencia"
+        },{
+          "position": "flyers lateral",
+          "name": "M. Arroyo",
+          "fullname": "Michael Arroyo"
+        },{
+          "position": "forward lateral",
+          "name": "Jaime Ayoví",
+          "fullname": "Jaime Ayoví"
+        },{
+          "position": "forward lateral",
+          "name": "E. Valencia",
+          "fullname": "Enner Valencia"
+        }
+      ]
+    },{
+      "fullname": "Federación Peruana de Fútbol",
+      "name": "Peru",
+      "code": "PER",
+      "technical": "Gustavo Quinteros",
+      "players": [
+        {
+          "position": "goalkeeper",
+          "name": "Gallese",
+          "fullname": "Gallese"
+        },{
+          "position": "defense lateral",
+          "name": "Vargas",
+          "fullname": "Vargas"
+        },{
+          "position": "defense central",
+          "name": "Ascuas",
+          "fullname": "Ascuas"
+        },{
+          "position": "defense central",
+          "name": "Zambrano",
+          "fullname": "Zambrano"
+        },{
+          "position": "defense lateral",
+          "name": "Advincula",
+          "fullname": "Advincula"
+        },{
+          "position": "flyers central",
+          "name": "Ballón",
+          "fullname": "Ballón"
+        },{
+          "position": "flyers central",
+          "name": "Lobatón",
+          "fullname": "Lobatón"
+        },{
+          "position": "flyers lateral",
+          "name": "Cueva",
+          "fullname": "Cueva"
+        },{
+          "position": "flyers lateral",
+          "name": "Farfán",
+          "fullname": "Farfán"
+        },{
+          "position": "forward lateral",
+          "name": "Sánchez",
+          "fullname": "Sánchez"
+        },{
+          "position": "forward lateral",
+          "name": "Guerrero",
+          "fullname": "Guerrero"
+        }
+      ]
+    }
+  ]
+}
