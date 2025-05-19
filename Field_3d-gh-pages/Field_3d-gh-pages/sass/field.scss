@@ -1,0 +1,763 @@
+.field{
+	width: $width-field;
+	height: $height-field;
+	background-color: $ground-field;
+	border: solid $stroke-line $linesColor;
+    @include lines(left, rgba(255,255,255,.1) , 40px);
+	@include box-shadow(0 0 15px rgba(0,0,0,.7));
+	@include center-absolute(absolute);
+	@include transform(rotateX(0deg) translate3d(0, 0px, 0px) rotate(0deg));
+	@include border-radius(2px);
+	@include transition((transform .5s ease, background 300ms ease));
+	@include transform-style(preserve-3d);
+	
+	&._3d{
+	    
+	    &.front{
+	        @include transform(rotateX(50deg) translate3d(0, -300px, -200px) rotate(0deg));
+
+            .score{
+                &.local, &.visitant{
+                    @include transform(rotatex(-68deg) translate3d(0,-100px, 30px));
+                }
+            }
+	    }
+	    
+	    &.back{
+	        @include transform(rotateX(50deg) translate3d(0, -300px, -200px) rotate(-180deg));
+	        
+	        .player{
+	            @include transform(rotatex(-90deg) translate3d(0, -30px, 0) rotateY(180deg));
+	        }
+
+            .score{
+                &.local, &.visitant{
+                    top: initial;
+                    bottom: 0;
+                    @include transform(rotatex(-106deg) rotatey(180deg) translate3d(0, -100px, 30px));
+                }
+            }
+	    }
+	    
+	    &.side_right{
+	        @include transform(rotateX(65deg) translate3d(0, -150px, -100px) rotate(90deg));
+	        
+	        .team{
+	            &.local{
+	                .player{
+        	            @include transform(rotatex(-90deg) translate3d(0, -30px, 0) rotateY(65deg));
+        	        }
+	            }
+	            
+	            &.visitant{
+	                .player{
+        	            @include transform(rotatex(-90deg) translate3d(0, -30px, 0) rotateY(-255deg));
+        	        }
+	            }
+	        }
+
+            .score{
+                &.local, &.visitant{
+                    margin: auto;
+                    left: 0;
+                    right: 0;
+                }
+
+                &.local{
+                    @include transform(rotatex(-90deg) rotatey(90deg) translate3d(0px, -150px, -300px));
+                }
+
+                &.visitant{
+                    @include transform(rotatex(-90deg) rotatey(90deg) translate3d(-450px, -150px, -300px));
+                }
+            }
+	    }
+	    
+	    &.side_left{
+	        @include transform(rotateX(65deg) translate3d(0, -150px, -100px) rotate(-90deg));
+	        
+	        .team{
+	            &.local{
+	                .player{
+        	            @include transform(rotatex(-90deg) translate3d(0, -30px, 0) rotateY(-65deg));
+        	        }
+	            }
+	            
+	            &.visitant{
+	                .player{
+        	            @include transform(rotatex(-90deg) translate3d(0, -30px, 0) rotateY(255deg));
+        	        }
+	            }
+	        }
+
+            .score{
+                &.local, &.visitant{
+                    margin: auto;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                }
+
+                &.local{
+                    @include transform(rotatex(-89deg) rotatey(-90deg) translate3d(-100px,125px,-300px));
+                }
+
+                &.visitant{
+                    @include transform(rotatex(-89deg) rotatey(-90deg) translate3d(300px,125px,-300px));
+                }
+            }
+	    }
+        
+	    .goalTop,
+        .goalBottom{
+            &:before{
+                background: rgba(0,0,0,.1);
+            }
+            
+            .crossbar{
+                opacity: 1;
+            }
+        }
+	    
+	    .team{
+	        
+	        &.local{
+        	    .player{
+        	        background-color: rgba(255, 255, 255, .6);
+        	    }
+	        }
+	        
+	        &.visitant{
+        	    .player{
+        	        background-color: rgba(130,130,130,.6);
+        	    }
+	        }
+	        
+	        .player{
+            	@include transform(rotatex(-90deg) translate3d(0,-50px, 0));
+            	@include transform-origin(center);
+            	
+            	&:before{
+    	            top: -65%;
+            	}
+    	    }
+	    }
+	}
+
+    &.animation{
+        @include animation(groundPerspective 40s infinite linear);
+
+        .goalTop,
+        .goalBottom{
+            // z-index: 100;
+        }
+
+        .team{
+            .player{
+                opacity: .8;
+            }
+        }
+    }
+
+    &.move{
+        @include transform(rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn) !important);
+    }
+	
+    &:after,
+    &:before{
+    	content: '';
+    	position: absolute;
+    	margin: auto;
+    }
+
+    &:after{
+    	width: 100%;
+    	height: $stroke-line;
+    	top: 0;
+    	bottom: 0;
+    	background: $linesColor;
+    }
+
+    &:before{
+    	width: 35%;
+    	height: 25%;
+    	// background: $ground-field-second;
+    	border-radius: 50%;
+    	border: $stroke-line solid $linesColor;
+    	top: 0;
+    	left: 0;
+    	right: 0;
+    	bottom: 0;
+    }
+
+    .goalTop,
+    .goalBottom{
+        // background: $ground-field-second;
+    	position: absolute;
+    	border: $stroke-line solid $linesColor;
+    	margin: auto;
+    	width: 65%;
+    	left: 0;
+    	right: 0;
+    	min-height: 150px;
+    	@include transform-style(preserve-3d);
+        @include transition(background 300ms 100ms ease);
+
+        &:before{
+        	position: absolute;
+        	content: '';
+        	width: 50%;
+        	height: 50%;
+        	border: $stroke-line solid $linesColor;
+        	margin: auto;
+        	left: 0;
+        	right: 0;
+        	@include transition(transform .3s ease);
+        }
+        
+        &:after{
+        	border-radius: 50%;
+        	width: $stroke-line;
+        	height: $stroke-line;
+        	content: '';
+        	background: $linesColor;
+        	@include center-absolute(absolute);
+        }
+        
+        .crossbar{
+            position: absolute;
+            margin: auto;
+            opacity: 0;
+            border-color: $linesColor !important;
+            @include transition(opacity .25s ease);
+            
+            &.back{
+                width: 50%;
+                height: 50%;
+                left: 0;
+                right: 0;
+            }
+            
+            &.front{
+                width: 50%;
+                height: 50%;
+                left: 0;
+                right: 0;
+            }
+            
+            &.bottom{
+                width: 50%;
+                height: 60px;
+                left: 0;
+                right: 0;
+            }
+            
+            &.top{
+                width: 50%;
+                height: 65px;
+                left: 0;
+                right: 0;
+            }
+        }
+        
+        .half-moon{
+            position: absolute;
+            overflow: hidden;
+            width: 45px;
+            height: 30px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            
+            &:after{
+                position: absolute;
+                width: 45px;
+                height: 45px;
+                border: solid $stroke-line white;
+                content: '';
+                background: $ground-field-second;
+                @include border-radius(50%);
+                @include box-sizing(border-box);
+                @include transition(background 300ms 150ms ease);
+            }
+        }
+    }
+    
+    .goalTop{
+    	top: 0;
+    	border-top: none;
+        
+        &:after{
+        	top: 50%;
+        }
+        
+        &:before{
+        	top: 0;
+        	border-top: none;
+        }
+        
+        .crossbar{
+            
+            &.back{
+                border: solid $stroke-line;
+                border-top: 0;
+                background-size: 4px;
+                @include transform-origin(top center);
+                @include transform(rotatex(90deg) translate3d(0,0px,65px));
+                @include gradient(linear, (65deg, rgba(255, 0, 0, 0) 50%, white 50%));
+                @include transform-style(preserve-3d);
+
+                &:before{
+                    position: absolute;
+                    top: -1%;
+                    left: -2%;
+                    width: 40%;
+                    height: 105%;
+                    content: '';
+                    background-size: 4px;
+                    @include gradient(linear, (65deg, rgba(255, 0, 0, 0) 50%, white 50%));
+                    @include transform(rotatey(90deg));
+                    @include transform-origin(left);
+                }
+
+                &:after{
+                    position: absolute;
+                    top: -1%;
+                    right: -2%;
+                    width: 40%;
+                    height: 105%;
+                    content: '';
+                    background-size: 4px;
+                    @include gradient(linear, (65deg, rgba(255, 0, 0, 0) 50%, white 50%));
+                    @include transform(rotatey(-90deg));
+                    @include transform-origin(right);
+                }
+            }
+            
+            &.front{
+                border: solid $stroke-line;
+                border-top: 0;
+                @include transform-origin(top center);
+                @include transform(rotatex(90deg) translate3d(0,0px,0px));
+            }
+            
+            &.bottom{
+                border: solid $stroke-line;
+                border-top: 0;
+                background-color: $ground-field;
+                @include lines(left, rgba(255,255,255,.1) , 40px);
+                @include transform-origin(top center);
+                @include transform(rotatex(180deg) );
+            }
+            
+            &.top{
+                border: solid $stroke-line;
+                border-top: 0;
+                border-bottom: 0;
+                @include transform-origin(top center);
+                @include transform(rotatex(180deg) translate3d(0,0,-78px));
+                background-size: 8px;
+                @include gradient(linear, (65deg, rgba(255, 0, 0, 0) 50%, white 50%));
+            }
+        }
+        
+        .half-moon{
+            top: 103%;
+            
+            &:after{
+                top: -100%;
+            }
+        }
+    }
+    
+    .goalBottom{
+    	bottom: 0;
+    	border-bottom: none;
+    	
+        &:after{
+    	    bottom: 50%;
+        }
+        
+        &:before{
+        	bottom: 0;
+        	border-bottom: none;
+        }
+        
+        .crossbar{
+            bottom: 0;
+            
+            &.back{
+                border: solid $stroke-line;
+                border-bottom: 0;
+                background-size: 4px;
+                @include transform-origin(bottom center);
+                @include transform(rotatex(-90deg) translate3d(0,0px,65px));
+                @include gradient(linear, (65deg, rgba(255, 0, 0, 0) 50%, white 50%));
+                @include transform-style(preserve-3d);
+
+                &:before{
+                    position: absolute;
+                    top: -5%;
+                    left: -2%;
+                    width: 40%;
+                    height: 105%;
+                    content: '';
+                    background-size: 4px;
+                    @include gradient(linear, (65deg, rgba(255, 0, 0, 0) 50%, white 50%));
+                    @include transform(rotatey(90deg));
+                    @include transform-origin(left);
+                }
+
+                &:after{
+                    position: absolute;
+                    top: -4%;
+                    right: -2%;
+                    width: 40%;
+                    height: 105%;
+                    content: '';
+                    background-size: 4px;
+                    @include gradient(linear, (65deg, rgba(255, 0, 0, 0) 50%, white 50%));
+                    @include transform(rotatey(-90deg));
+                    @include transform-origin(right);
+                }
+            }
+            
+            &.front{
+                border: solid $stroke-line;
+                border-bottom: 0;
+                @include transform-origin(bottom center);
+                @include transform(rotatex(-90deg) translate3d(0,0px,0px));
+            }
+            
+            &.bottom{
+                border: solid $stroke-line;
+                border-bottom: 0;
+                @include lines(left, rgba(255,255,255,.1) , 40px);
+                @include transform-origin(bottom center);
+                @include transform(rotatex(-180deg) );
+                background-color: $ground-field;
+            }
+            
+            &.top{
+                border: solid $stroke-line;
+                border-top: 0;
+                border-bottom: 0;
+                @include transform-origin(bottom center);
+                @include transform(rotatex(-180deg) translate3d(0,0,-78px));
+                background-size: 8px;
+                @include gradient(linear, (65deg, rgba(255, 0, 0, 0) 50%, white 50%));
+            }
+        }
+        
+        .half-moon{
+            top: -23%;
+            
+            &:after{
+                top: 45%;
+            }
+        }
+    }
+    
+    .team{
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        left: 0;
+
+        &[team="colombia"]{
+            .player{
+                background-image: url(../images/colombia.png);
+            }
+        }
+
+        &[team="argentina"]{
+            .player{
+                background-image: url(../images/argentina.png);
+                background-color: rgba(130,130,130,1);
+                background-size: 80%;
+            }
+        }
+
+        &[team="brasil"]{
+            .player{
+                background-image: url(../images/brasil.png);
+                background-size: 80%;
+                background-position: 56% 55%;
+            }
+        }
+
+        &[team="peru"]{
+            .player{
+                background-image: url(../images/peru.png);
+                background-size: 80%;
+                background-position: 50% 71%;
+            }
+        }
+
+        &[team="ecuador"]{
+            .player{
+                background-image: url(../images/ecuador.png);
+                background-size: 80%;
+                background-position: 50% 70%;
+            }
+        }
+        
+        &.local{
+            top: 0;
+            
+            .player{
+            
+                &.goalkeepper{
+                	top: 1rem;
+                	left: 0;
+                	right: 0;
+                }
+            
+                &.defense{
+                	top: calc(3rem + 50px);
+                	
+                    &.central{
+                    	left: 0;
+                    	right: 0;
+                    	
+                    	&__left{
+                    	    left: calc(-3rem - 60px);
+                    	}
+                    	
+                    	&__right{
+                    	    right: calc(-3rem - 60px);
+                    	}
+                    }
+                    
+                    &.lateral{
+                    	top: calc(4rem + 50px);
+                    	
+                    	&__left{
+                    	    left: 2rem;
+                    	}
+                    	
+                    	&__right{
+                    	    right: 2rem;
+                    	}
+                    }
+                }
+                
+                &.flyers{
+                	top: calc(8rem + 50px);
+                	
+                	&.central{
+                    	left: 0;
+                    	right: 0;
+                    }
+            
+                    &.lateral{
+                    	top: calc(9rem + 50px);
+                        
+                        &__left{
+                        	left: 7rem;
+                        }
+            
+                        &__right{
+                        	right: 7rem;
+                        }
+                    }
+                }
+                
+                &.forward{
+                	top: calc(13rem + 50px);
+                	
+                    &.central{
+                    	left: 0;
+                    	right: 0;
+                    	top: calc(15rem + 50px);
+                    }
+                    
+                    &.lateral{
+                    	top: calc(14rem + 50px);
+                        
+                        &__left{
+                        	left: 5rem;
+                        }
+                        
+                        &__right{
+                        	right: 5rem;
+                        }
+                    }
+                }
+            }
+        }
+        
+        &.visitant{
+            bottom: 0;
+            
+            .player{
+            
+                &.goalkeepper{
+                	bottom: 1rem;
+                	left: 0;
+                	right: 0;
+                }
+            
+                &.defense{
+                	bottom: calc(3rem + 50px);
+                	
+                    &.central{
+                    	left: 0;
+                    	right: 0;
+                    	
+                    	&__left{
+                    	    left: calc(-3rem - 60px);
+                    	}
+                    	
+                    	&__right{
+                    	    right: calc(-3rem - 60px);
+                    	}
+                    }
+                    
+                    &.lateral{
+                    	bottom: calc(4rem + 50px);
+                    	
+                    	&__left{
+                    	    left: 2rem;
+                    	}
+                    	
+                    	&__right{
+                    	    right: 2rem;
+                    	}
+                    }
+                }
+                
+                &.flyers{
+                	bottom: calc(8rem + 50px);
+                	
+                	&.central{
+                    	left: 0;
+                    	right: 0;
+                    }
+            
+                    &.lateral{
+                    	bottom: calc(9rem + 50px);
+                        
+                        &__left{
+                        	left: 7rem;
+                        }
+            
+                        &__right{
+                        	right: 7rem;
+                        }
+                    }
+                }
+                
+                &.forward{
+                	bottom: calc(13rem + 50px);
+                	
+                    &.central{
+                    	left: 0;
+                    	right: 0;
+                    	top: calc(0rem - -7px);
+                    }
+                    
+                    &.lateral{
+                    	bottom: calc(14rem + 50px);
+                        
+                        &__left{
+                        	left: 5rem;
+                        }
+                        
+                        &__right{
+                        	right: 5rem;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .player{
+            position: absolute;
+        	margin: auto;
+        	border-radius: 50%;
+        	width: $width-player;
+        	height: $height-player;
+        	z-index: 1;
+        	background-color: rgba(255, 255, 255, 0.3);
+        	background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        	@include transition((transform .2s ease, box-shadow .3s ease, background 300ms ease));
+            @include transform-style(preserve-3d);
+        	
+        	&:before{
+            	position: absolute;
+            	content: attr(name);
+            	background: rgba(0,0,0,.8);
+            	color: $linesColor;
+            	text-transform: capitalize;
+            	top: 110%;
+            	left: -50%;
+            	text-align: center;
+            	width: 180%;
+            	display: block;
+            	padding: .15rem .35rem;
+            	opacity: 0;
+            	font-size: 12px;
+            	font-family: Helvetica;
+            	@include transition((opacity .5s ease, transform .3s ease));
+            	@include transform(translatey(80%));
+            	@include border-radius(3px);
+            }
+            
+            &.active,
+            &:hover{
+                @include box-shadow(0 0 30px rgba(0,0,0,.4));
+                
+                &:before{
+                	opacity: 1;
+                	@include transform(translatey(0%));
+                }
+            }
+        }
+    }
+
+    .score{
+        font-family: 'Just Another Hand', cursive;
+        position: absolute;
+        top: 0;
+        @include transition((transform 300ms ease, opacity 200ms ease));
+
+        &.local{
+            left: -60%;
+            @include transform(translate3d(-100px,0px,-100px));
+        }
+
+        &.visitant{
+            right: -60%;
+            @include transform(translate3d(100px,0px,-100px));
+        }
+
+        &.hide{
+            opacity: 0;
+        }
+
+        span{
+            font-size: 3rem;
+            color: white;
+            @include text-shadow(0 0 2px #585858);
+
+            &:first-child{
+                padding: .25rem 2.5rem .05rem;
+                background: rgba(255,255,255,.6);
+                @include border-radius(50%);
+                font-size: 6rem;
+                @include box-shadow(0 0 12px #585858 inset);
+            }
+
+            &:last-child{
+                text-indent: 10px;
+                font-size: 5.5rem;
+                display: inline-block;
+            }
+        }
+    }
+    
+}
