@@ -1,0 +1,2578 @@
+@import url(https://fonts.googleapis.com/css?family=Special+Elite);
+@import url(https://fonts.googleapis.com/css?family=Just+Another+Hand);
+* {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+body, html {
+  width: 100%;
+  height: 100%;
+  display: block; }
+
+body {
+  overflow: hidden;
+  font-size: 100%;
+  position: relative;
+  -webkit-perspective: 500px;
+  -khtml-perspective: 500px;
+  -moz-perspective: 500px;
+  -ms-perspective: 500px;
+  -o-perspective: 500px;
+  perspective: 500px;
+  background-image: -webkit-radial-gradient(center, #001c00, #087108);
+  background-image: -khtml-radial-gradient(center, #001c00, #087108);
+  background-image: -moz-radial-gradient(center, #001c00, #087108);
+  background-image: -ms-radial-gradient(center, #001c00, #087108);
+  background-image: -o-radial-gradient(center, #001c00, #087108);
+  background-image: radial-gradient(center, #001c00, #087108); }
+  body.move .controlsCamera, body.move .settingsLocalTeam, body.move .settingsVisitantTeam {
+    display: none !important; }
+  body[ground="_1"] {
+    background-image: -webkit-radial-gradient(center, #fdfdfd, #323232);
+    background-image: -khtml-radial-gradient(center, #fdfdfd, #323232);
+    background-image: -moz-radial-gradient(center, #fdfdfd, #323232);
+    background-image: -ms-radial-gradient(center, #fdfdfd, #323232);
+    background-image: -o-radial-gradient(center, #fdfdfd, #323232);
+    background-image: radial-gradient(center, #fdfdfd, #323232); }
+    body[ground="_1"] .field {
+      background-color: #09c;
+      background-image: none; }
+      body[ground="_1"] .field:before {
+        background: #0185b1; }
+      body[ground="_1"] .field .goalTop,
+      body[ground="_1"] .field .goalBottom {
+        background: #0185b1; }
+        body[ground="_1"] .field .goalTop .half-moon:after,
+        body[ground="_1"] .field .goalBottom .half-moon:after {
+          background: #0185b1; }
+        body[ground="_1"] .field .goalTop .crossbar.bottom,
+        body[ground="_1"] .field .goalBottom .crossbar.bottom {
+          background: #0185b1; }
+        body[ground="_1"] .field .goalTop .crossbar.back, body[ground="_1"] .field .goalTop .crossbar.top, body[ground="_1"] .field .goalTop .crossbar.back:after, body[ground="_1"] .field .goalTop .crossbar.back:before,
+        body[ground="_1"] .field .goalBottom .crossbar.back,
+        body[ground="_1"] .field .goalBottom .crossbar.top,
+        body[ground="_1"] .field .goalBottom .crossbar.back:after,
+        body[ground="_1"] .field .goalBottom .crossbar.back:before {
+          background-image: -webkit-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, rgba(130, 130, 130, 0.8) 50%);
+          background-image: -khtml-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, rgba(130, 130, 130, 0.8) 50%);
+          background-image: -moz-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, rgba(130, 130, 130, 0.8) 50%);
+          background-image: -ms-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, rgba(130, 130, 130, 0.8) 50%);
+          background-image: -o-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, rgba(130, 130, 130, 0.8) 50%);
+          background-image: linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, rgba(130, 130, 130, 0.8) 50%); }
+  body[ground="_3"] .field {
+    background-color: #b3a98d; }
+    body[ground="_3"] .field .goalTop .half-moon:after,
+    body[ground="_3"] .field .goalBottom .half-moon:after {
+      background: #b3a98d; }
+    body[ground="_3"] .field .goalTop .crossbar.bottom,
+    body[ground="_3"] .field .goalBottom .crossbar.bottom {
+      background: #b3a98d; }
+    body[ground="_3"] .field .goalTop .crossbar.back, body[ground="_3"] .field .goalTop .crossbar.top, body[ground="_3"] .field .goalTop .crossbar.back:after, body[ground="_3"] .field .goalTop .crossbar.back:before,
+    body[ground="_3"] .field .goalBottom .crossbar.back,
+    body[ground="_3"] .field .goalBottom .crossbar.top,
+    body[ground="_3"] .field .goalBottom .crossbar.back:after,
+    body[ground="_3"] .field .goalBottom .crossbar.back:before {
+      background-image: -webkit-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, rgba(255, 102, 0, 0.5) 50%);
+      background-image: -khtml-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, rgba(255, 102, 0, 0.5) 50%);
+      background-image: -moz-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, rgba(255, 102, 0, 0.5) 50%);
+      background-image: -ms-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, rgba(255, 102, 0, 0.5) 50%);
+      background-image: -o-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, rgba(255, 102, 0, 0.5) 50%);
+      background-image: linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, rgba(255, 102, 0, 0.5) 50%); }
+  body[style="_1"]:not([ground="_1"]) .field {
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1));
+    background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1));
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1));
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1)), linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1)); }
+    body[style="_1"]:not([ground="_1"]) .field .goalTop .crossbar.bottom,
+    body[style="_1"]:not([ground="_1"]) .field .goalBottom .crossbar.bottom {
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+      background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1));
+      background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1));
+      background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1));
+      background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1)), linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1)); }
+  body[style="_3"]:not([ground="_1"]) .field {
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+    background-image: linear-gradient(top, rgba(255, 255, 255, 0.1) 50%, transparent 50%); }
+    body[style="_3"]:not([ground="_1"]) .field .goalTop .crossbar.bottom,
+    body[style="_3"]:not([ground="_1"]) .field .goalBottom .crossbar.bottom {
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+      background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+      background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+      background-image: linear-gradient(top, rgba(255, 255, 255, 0.1) 50%, transparent 50%); }
+  body[style="_4"]:not([ground="_1"]) .field {
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+    background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 50%, transparent 50%); }
+    body[style="_4"]:not([ground="_1"]) .field .goalTop .crossbar.bottom,
+    body[style="_4"]:not([ground="_1"]) .field .goalBottom .crossbar.bottom {
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+      background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+      background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+      background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 50%, transparent 50%); }
+  body[style="_5"]:not([ground="_1"]) .field {
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    background-image: -webkit-radial-gradient(center, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+    background-image: -moz-linear-gradient(center, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+    background-image: linear-gradient(center, rgba(255, 255, 255, 0.1) 50%, transparent 50%); }
+    body[style="_5"]:not([ground="_1"]) .field .goalTop .crossbar.bottom,
+    body[style="_5"]:not([ground="_1"]) .field .goalBottom .crossbar.bottom {
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+      background-image: -webkit-radial-gradient(center, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+      background-image: -moz-linear-gradient(center, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+      background-image: linear-gradient(center, rgba(255, 255, 255, 0.1) 50%, transparent 50%); }
+
+.sideField {
+  cursor: pointer;
+  -webkit-transition: fill 300ms ease;
+  -khtml-transition: fill 300ms ease;
+  -moz-transition: fill 300ms ease;
+  -ms-transition: fill 300ms ease;
+  -o-transition: fill 300ms ease;
+  transition: fill 300ms ease; }
+  .sideField.active, .sideField:hover {
+    fill: #aaa !important; }
+
+.cameraField {
+  cursor: pointer;
+  -webkit-transition: fill 300ms ease;
+  -khtml-transition: fill 300ms ease;
+  -moz-transition: fill 300ms ease;
+  -ms-transition: fill 300ms ease;
+  -o-transition: fill 300ms ease;
+  transition: fill 300ms ease; }
+  .cameraField:hover, .cameraField.active {
+    fill: #058e05 !important; }
+
+.title {
+  font-family: 'Special Elite', cursive;
+  color: #fefefe;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 2.5rem;
+  width: 100%;
+  position: relative; }
+  .title:hover:after {
+    width: 25%;
+    -webkit-border-radius: 50%;
+    -khtml-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%; }
+  .title:after {
+    position: absolute;
+    bottom: -.5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 10%;
+    background-color: #fefefe;
+    height: 2px;
+    content: '';
+    -webkit-border-radius: 40%;
+    -khtml-border-radius: 40%;
+    -moz-border-radius: 40%;
+    -ms-border-radius: 40%;
+    -o-border-radius: 40%;
+    border-radius: 40%;
+    -webkit-transition: width 100ms ease-in;
+    -khtml-transition: width 100ms ease-in;
+    -moz-transition: width 100ms ease-in;
+    -ms-transition: width 100ms ease-in;
+    -o-transition: width 100ms ease-in;
+    transition: width 100ms ease-in; }
+
+.back_button {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  background: white;
+  width: 30px;
+  height: 30px;
+  opacity: .5;
+  -webkit-border-radius: 50%;
+  -khtml-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s ease;
+  -khtml-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+  -khtml-box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+  -ms-box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+  -o-box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.5); }
+  .back_button:hover {
+    opacity: 1;
+    -webkit-box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    -khtml-box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    -moz-box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    -ms-box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    -o-box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); }
+    .back_button:hover .message {
+      width: 33px;
+      color: #111;
+      padding: .25rem .5rem; }
+  .back_button img {
+    max-width: 100%; }
+  .back_button .message {
+    position: absolute;
+    top: 1px;
+    left: 105%;
+    background: white;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: comic sans;
+    width: 0;
+    color: transparent;
+    -webkit-transition: width 0.12s ease, color 0.2s 0.12s ease;
+    -khtml-transition: width 0.12s ease, color 0.2s 0.12s ease;
+    -moz-transition: width 0.12s ease, color 0.2s 0.12s ease;
+    -ms-transition: width 0.12s ease, color 0.2s 0.12s ease;
+    -o-transition: width 0.12s ease, color 0.2s 0.12s ease;
+    transition: width 0.12s ease, color 0.2s 0.12s ease;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    -khtml-box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    -moz-box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    -ms-box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    -o-box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5); }
+
+.container_button {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  text-align: right; }
+
+.settingsLocalTeam {
+  position: absolute;
+  bottom: 6rem;
+  left: 2rem;
+  -webkit-transform-origin: left center;
+  -khtml-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -ms-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+  -webkit-transform: rotatey(20deg);
+  -khtml-transform: rotatey(20deg);
+  -moz-transform: rotatey(20deg);
+  -ms-transform: rotatey(20deg);
+  -o-transform: rotatey(20deg);
+  transform: rotatey(20deg); }
+  .settingsLocalTeam:hover {
+    z-index: 11; }
+    .settingsLocalTeam:hover .containerImage img {
+      -webkit-box-shadow: 0 0 12px #585858 inset;
+      -khtml-box-shadow: 0 0 12px #585858 inset;
+      -moz-box-shadow: 0 0 12px #585858 inset;
+      -ms-box-shadow: 0 0 12px #585858 inset;
+      -o-box-shadow: 0 0 12px #585858 inset;
+      box-shadow: 0 0 12px #585858 inset;
+      background-color: rgba(255, 255, 255, 0.5); }
+    .settingsLocalTeam:hover .changeTeam {
+      opacity: 1;
+      -webkit-transform: rotatey(0) rotatez(0) rotatex(0);
+      -khtml-transform: rotatey(0) rotatez(0) rotatex(0);
+      -moz-transform: rotatey(0) rotatez(0) rotatex(0);
+      -ms-transform: rotatey(0) rotatez(0) rotatex(0);
+      -o-transform: rotatey(0) rotatez(0) rotatex(0);
+      transform: rotatey(0) rotatez(0) rotatex(0);
+      -webkit-box-shadow: 0 0 12px #585858 inset;
+      -khtml-box-shadow: 0 0 12px #585858 inset;
+      -moz-box-shadow: 0 0 12px #585858 inset;
+      -ms-box-shadow: 0 0 12px #585858 inset;
+      -o-box-shadow: 0 0 12px #585858 inset;
+      box-shadow: 0 0 12px #585858 inset; }
+  .settingsLocalTeam img {
+    max-width: 20px;
+    vertical-align: sub; }
+  .settingsLocalTeam .containerImage {
+    cursor: pointer;
+    display: inline;
+    vertical-align: middle; }
+    .settingsLocalTeam .containerImage img {
+      background-color: rgba(255, 255, 255, 0.3);
+      padding: .4rem;
+      -webkit-transition: background 200ms ease;
+      -khtml-transition: background 200ms ease;
+      -moz-transition: background 200ms ease;
+      -ms-transition: background 200ms ease;
+      -o-transition: background 200ms ease;
+      transition: background 200ms ease;
+      -webkit-border-radius: 50%;
+      -khtml-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      border-radius: 50%; }
+  .settingsLocalTeam .changeTeam {
+    position: absolute;
+    bottom: 95%;
+    left: 95%;
+    background: rgba(255, 255, 255, 0.22);
+    padding: .25rem .51rem;
+    min-width: 140px;
+    border-radius: 4px;
+    opacity: 0;
+    -webkit-transition: opacity 200ms ease, background 200ms ease, transform 100ms ease;
+    -khtml-transition: opacity 200ms ease, background 200ms ease, transform 100ms ease;
+    -moz-transition: opacity 200ms ease, background 200ms ease, transform 100ms ease;
+    -ms-transition: opacity 200ms ease, background 200ms ease, transform 100ms ease;
+    -o-transition: opacity 200ms ease, background 200ms ease, transform 100ms ease;
+    transition: opacity 200ms ease, background 200ms ease, transform 100ms ease;
+    -webkit-transform: rotatey(90deg) rotate(-40deg) rotatex(90deg);
+    -khtml-transform: rotatey(90deg) rotate(-40deg) rotatex(90deg);
+    -moz-transform: rotatey(90deg) rotate(-40deg) rotatex(90deg);
+    -ms-transform: rotatey(90deg) rotate(-40deg) rotatex(90deg);
+    -o-transform: rotatey(90deg) rotate(-40deg) rotatex(90deg);
+    transform: rotatey(90deg) rotate(-40deg) rotatex(90deg);
+    -webkit-transform-origin: bottom left;
+    -khtml-transform-origin: bottom left;
+    -moz-transform-origin: bottom left;
+    -ms-transform-origin: bottom left;
+    -o-transform-origin: bottom left;
+    transform-origin: bottom left; }
+    .settingsLocalTeam .changeTeam:hover {
+      background-color: rgba(255, 255, 255, 0.5); }
+    .settingsLocalTeam .changeTeam ul {
+      list-style: none; }
+      .settingsLocalTeam .changeTeam ul li {
+        color: #323232;
+        font-family: 'Special Elite', cursive;
+        cursor: pointer;
+        padding-bottom: .25rem;
+        -webkit-text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+        -khtml-text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+        -moz-text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+        -ms-text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+        -o-text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.4); }
+        .settingsLocalTeam .changeTeam ul li:not(.header) {
+          -webkit-transition: text-indent 100ms ease;
+          -khtml-transition: text-indent 100ms ease;
+          -moz-transition: text-indent 100ms ease;
+          -ms-transition: text-indent 100ms ease;
+          -o-transition: text-indent 100ms ease;
+          transition: text-indent 100ms ease; }
+          .settingsLocalTeam .changeTeam ul li:not(.header):hover {
+            text-indent: 5px; }
+          .settingsLocalTeam .changeTeam ul li:not(.header).active i {
+            opacity: 1; }
+          .settingsLocalTeam .changeTeam ul li:not(.header) i {
+            opacity: 0;
+            float: right;
+            -webkit-transition: opacity 200ms ease;
+            -khtml-transition: opacity 200ms ease;
+            -moz-transition: opacity 200ms ease;
+            -ms-transition: opacity 200ms ease;
+            -o-transition: opacity 200ms ease;
+            transition: opacity 200ms ease; }
+        .settingsLocalTeam .changeTeam ul li.header {
+          padding-top: .5rem;
+          text-align: center;
+          position: relative;
+          padding-bottom: .5rem; }
+          .settingsLocalTeam .changeTeam ul li.header:after {
+            position: absolute;
+            bottom: .2rem;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 100%;
+            opacity: 1;
+            background-color: #323232;
+            height: 2px;
+            content: ''; }
+  .settingsLocalTeam .containerTraining {
+    display: inline;
+    vertical-align: middle;
+    padding: .25rem .5rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #323232; }
+
+.settingsVisitantTeam {
+  position: absolute;
+  bottom: 6rem;
+  right: 2rem;
+  -webkit-transform-origin: right center;
+  -khtml-transform-origin: right center;
+  -moz-transform-origin: right center;
+  -ms-transform-origin: right center;
+  -o-transform-origin: right center;
+  transform-origin: right center;
+  -webkit-transform: rotatey(-20deg);
+  -khtml-transform: rotatey(-20deg);
+  -moz-transform: rotatey(-20deg);
+  -ms-transform: rotatey(-20deg);
+  -o-transform: rotatey(-20deg);
+  transform: rotatey(-20deg); }
+  .settingsVisitantTeam:hover .containerImage img {
+    background-color: rgba(255, 255, 255, 0.5); }
+  .settingsVisitantTeam:hover .changeTeam {
+    opacity: 1;
+    -webkit-box-shadow: 0 0 12px #585858 inset;
+    -khtml-box-shadow: 0 0 12px #585858 inset;
+    -moz-box-shadow: 0 0 12px #585858 inset;
+    -ms-box-shadow: 0 0 12px #585858 inset;
+    -o-box-shadow: 0 0 12px #585858 inset;
+    box-shadow: 0 0 12px #585858 inset;
+    -webkit-transform: rotatey(0deg) rotate(0deg) rotatex(0deg);
+    -khtml-transform: rotatey(0deg) rotate(0deg) rotatex(0deg);
+    -moz-transform: rotatey(0deg) rotate(0deg) rotatex(0deg);
+    -ms-transform: rotatey(0deg) rotate(0deg) rotatex(0deg);
+    -o-transform: rotatey(0deg) rotate(0deg) rotatex(0deg);
+    transform: rotatey(0deg) rotate(0deg) rotatex(0deg); }
+  .settingsVisitantTeam img {
+    max-width: 20px;
+    vertical-align: sub; }
+  .settingsVisitantTeam .containerImage {
+    cursor: pointer; }
+    .settingsVisitantTeam .containerImage img {
+      background-color: rgba(255, 255, 255, 0.3);
+      padding: .4rem;
+      -webkit-box-shadow: 0 0 12px #585858 inset;
+      -khtml-box-shadow: 0 0 12px #585858 inset;
+      -moz-box-shadow: 0 0 12px #585858 inset;
+      -ms-box-shadow: 0 0 12px #585858 inset;
+      -o-box-shadow: 0 0 12px #585858 inset;
+      box-shadow: 0 0 12px #585858 inset;
+      -webkit-transition: background 200ms ease, box-shadow 200ms ease;
+      -khtml-transition: background 200ms ease, box-shadow 200ms ease;
+      -moz-transition: background 200ms ease, box-shadow 200ms ease;
+      -ms-transition: background 200ms ease, box-shadow 200ms ease;
+      -o-transition: background 200ms ease, box-shadow 200ms ease;
+      transition: background 200ms ease, box-shadow 200ms ease;
+      -webkit-border-radius: 50%;
+      -khtml-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      border-radius: 50%; }
+  .settingsVisitantTeam .changeTeam {
+    position: absolute;
+    bottom: 95%;
+    right: 95%;
+    background: rgba(255, 255, 255, 0.22);
+    padding: .25rem .51rem;
+    min-width: 140px;
+    border-radius: 4px;
+    opacity: 0;
+    -webkit-transition: opacity 200ms ease, background 200ms ease, transform 100ms ease;
+    -khtml-transition: opacity 200ms ease, background 200ms ease, transform 100ms ease;
+    -moz-transition: opacity 200ms ease, background 200ms ease, transform 100ms ease;
+    -ms-transition: opacity 200ms ease, background 200ms ease, transform 100ms ease;
+    -o-transition: opacity 200ms ease, background 200ms ease, transform 100ms ease;
+    transition: opacity 200ms ease, background 200ms ease, transform 100ms ease;
+    -webkit-transform: rotatey(90deg) rotate(40deg) rotatex(-90deg);
+    -khtml-transform: rotatey(90deg) rotate(40deg) rotatex(-90deg);
+    -moz-transform: rotatey(90deg) rotate(40deg) rotatex(-90deg);
+    -ms-transform: rotatey(90deg) rotate(40deg) rotatex(-90deg);
+    -o-transform: rotatey(90deg) rotate(40deg) rotatex(-90deg);
+    transform: rotatey(90deg) rotate(40deg) rotatex(-90deg);
+    -webkit-transform-origin: bottom right;
+    -khtml-transform-origin: bottom right;
+    -moz-transform-origin: bottom right;
+    -ms-transform-origin: bottom right;
+    -o-transform-origin: bottom right;
+    transform-origin: bottom right; }
+    .settingsVisitantTeam .changeTeam:hover {
+      background-color: rgba(255, 255, 255, 0.5); }
+    .settingsVisitantTeam .changeTeam ul {
+      list-style: none; }
+      .settingsVisitantTeam .changeTeam ul li {
+        color: #323232;
+        font-family: 'Special Elite', cursive;
+        cursor: pointer;
+        padding-bottom: .25rem;
+        -webkit-text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+        -khtml-text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+        -moz-text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+        -ms-text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+        -o-text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.4); }
+        .settingsVisitantTeam .changeTeam ul li:not(.header) {
+          -webkit-transition: text-indent 100ms ease;
+          -khtml-transition: text-indent 100ms ease;
+          -moz-transition: text-indent 100ms ease;
+          -ms-transition: text-indent 100ms ease;
+          -o-transition: text-indent 100ms ease;
+          transition: text-indent 100ms ease; }
+          .settingsVisitantTeam .changeTeam ul li:not(.header):hover {
+            text-indent: 5px; }
+          .settingsVisitantTeam .changeTeam ul li:not(.header).active i {
+            opacity: 1; }
+          .settingsVisitantTeam .changeTeam ul li:not(.header) i {
+            opacity: 0;
+            float: right;
+            -webkit-transition: opacity 200ms ease;
+            -khtml-transition: opacity 200ms ease;
+            -moz-transition: opacity 200ms ease;
+            -ms-transition: opacity 200ms ease;
+            -o-transition: opacity 200ms ease;
+            transition: opacity 200ms ease; }
+        .settingsVisitantTeam .changeTeam ul li.header {
+          padding-top: .5rem;
+          text-align: center;
+          position: relative;
+          padding-bottom: .5rem; }
+          .settingsVisitantTeam .changeTeam ul li.header:after {
+            position: absolute;
+            bottom: .2rem;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 100%;
+            opacity: 1;
+            background-color: #323232;
+            height: 2px;
+            content: ''; }
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-image: -webkit-radial-gradient(center, #fefefe, #fdfdfd);
+  background-image: -khtml-radial-gradient(center, #fefefe, #fdfdfd);
+  background-image: -moz-radial-gradient(center, #fefefe, #fdfdfd);
+  background-image: -ms-radial-gradient(center, #fefefe, #fdfdfd);
+  background-image: -o-radial-gradient(center, #fefefe, #fdfdfd);
+  background-image: radial-gradient(center, #fefefe, #fdfdfd);
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999; }
+
+.ballContent {
+  width: 140px;
+  height: 300px;
+  position: fixed;
+  left: 50%;
+  top: 15%;
+  margin-left: -70px;
+  z-index: 100;
+  -webkit-transform: scale(1);
+  -khtml-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all 5s linear 0s;
+  -khtml-transition: all 5s linear 0s;
+  -moz-transition: all 5s linear 0s;
+  -ms-transition: all 5s linear 0s;
+  -o-transition: all 5s linear 0s;
+  transition: all 5s linear 0s; }
+  .ballContent:before {
+    content: 'Loading...';
+    font-family: 'Special Elite', cursive;
+    position: absolute;
+    top: 110%;
+    text-align: center;
+    color: #323232;
+    width: 200%;
+    font-size: 2rem;
+    left: -50%;
+    -webkit-animation: textCrazy 0.7s infinite ease-in;
+    -khtml-animation: textCrazy 0.7s infinite ease-in;
+    -moz-animation: textCrazy 0.7s infinite ease-in;
+    -ms-animation: textCrazy 0.7s infinite ease-in;
+    -o-animation: textCrazy 0.7s infinite ease-in;
+    animation: textCrazy 0.7s infinite ease-in; }
+
+.ball {
+  width: 140px;
+  height: 140px;
+  border-radius: 70px;
+  background: #bbbbbb;
+  background: url(../images/ball.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  z-index: 11;
+  -webkit-animation: jump 1s infinite;
+  -khtml-animation: jump 1s infinite;
+  -moz-animation: jump 1s infinite;
+  -ms-animation: jump 1s infinite;
+  -o-animation: jump 1s infinite;
+  animation: jump 1s infinite;
+  -webkit-transform: scale(0.7);
+  -khtml-transform: scale(0.7);
+  -moz-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  -o-transform: scale(0.7);
+  transform: scale(0.7); }
+
+.ball::after {
+  content: "";
+  width: 80px;
+  height: 40px;
+  position: absolute;
+  left: 30px;
+  top: 10px;
+  z-index: 10;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U4ZThlOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjElIiBzdG9wLWNvbG9yPSIjZThlOGU4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background-image: -webkit-top-gradient(#e8e8e8 0%, #e8e8e8 1%, rgba(255, 255, 255, 0) 100%);
+  background-image: -khtml-top-gradient(#e8e8e8 0%, #e8e8e8 1%, rgba(255, 255, 255, 0) 100%);
+  background-image: -moz-top-gradient(#e8e8e8 0%, #e8e8e8 1%, rgba(255, 255, 255, 0) 100%);
+  background-image: -ms-top-gradient(#e8e8e8 0%, #e8e8e8 1%, rgba(255, 255, 255, 0) 100%);
+  background-image: -o-top-gradient(#e8e8e8 0%, #e8e8e8 1%, rgba(255, 255, 255, 0) 100%);
+  background-image: top-gradient(#e8e8e8 0%, #e8e8e8 1%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 40px / 20px; }
+
+.ballShadow {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 10;
+  margin-left: -30px;
+  width: 20px;
+  height: 55px;
+  background: rgba(20, 20, 20, 0.1);
+  box-shadow: 0px 0 20px 35px rgba(20, 20, 20, 0.1);
+  border-radius: 30px / 40px;
+  -webkit-transform: scaleY(0.3);
+  -khtml-transform: scaleY(0.3);
+  -moz-transform: scaleY(0.3);
+  -ms-transform: scaleY(0.3);
+  -o-transform: scaleY(0.3);
+  transform: scaleY(0.3);
+  -webkit-animation: shrink 1s infinite;
+  -khtml-animation: shrink 1s infinite;
+  -moz-animation: shrink 1s infinite;
+  -ms-animation: shrink 1s infinite;
+  -o-animation: shrink 1s infinite;
+  animation: shrink 1s infinite; }
+
+.panel {
+  position: absolute;
+  left: 4rem;
+  top: 3rem;
+  width: 190px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-transform: rotatey(20deg) perspective(800px);
+  -khtml-transform: rotatey(20deg) perspective(800px);
+  -moz-transform: rotatey(20deg) perspective(800px);
+  -ms-transform: rotatey(20deg) perspective(800px);
+  -o-transform: rotatey(20deg) perspective(800px);
+  transform: rotatey(20deg) perspective(800px);
+  -webkit-transform-origin: left;
+  -khtml-transform-origin: left;
+  -moz-transform-origin: left;
+  -ms-transform-origin: left;
+  -o-transform-origin: left;
+  transform-origin: left;
+  -webkit-transition: transform 250ms ease, background 300ms ease;
+  -khtml-transition: transform 250ms ease, background 300ms ease;
+  -moz-transition: transform 250ms ease, background 300ms ease;
+  -ms-transition: transform 250ms ease, background 300ms ease;
+  -o-transition: transform 250ms ease, background 300ms ease;
+  transition: transform 250ms ease, background 300ms ease;
+  -webkit-border-radius: 3px 3px 0 3px;
+  -khtml-border-radius: 3px 3px 0 3px;
+  -moz-border-radius: 3px 3px 0 3px;
+  -ms-border-radius: 3px 3px 0 3px;
+  -o-border-radius: 3px 3px 0 3px;
+  border-radius: 3px 3px 0 3px;
+  -webkit-box-shadow: 0 0 12px #585858 inset;
+  -khtml-box-shadow: 0 0 12px #585858 inset;
+  -moz-box-shadow: 0 0 12px #585858 inset;
+  -ms-box-shadow: 0 0 12px #585858 inset;
+  -o-box-shadow: 0 0 12px #585858 inset;
+  box-shadow: 0 0 12px #585858 inset; }
+  .panel:hover {
+    -webkit-transform: rotatey(18deg);
+    -khtml-transform: rotatey(18deg);
+    -moz-transform: rotatey(18deg);
+    -ms-transform: rotatey(18deg);
+    -o-transform: rotatey(18deg);
+    transform: rotatey(18deg);
+    background: rgba(255, 255, 255, 0.8); }
+    .panel:hover ul li.header:after {
+      width: 80%; }
+  .panel.open ul li:not(.header) {
+    display: block; }
+  .panel.open ul li.header:after {
+    opacity: 1; }
+  .panel ul {
+    list-style-type: none; }
+    .panel ul > li {
+      font-family: 'Special Elite', cursive;
+      text-align: center;
+      color: #323232;
+      padding: 1rem 0;
+      position: relative;
+      cursor: pointer; }
+      .panel ul > li:hover .submenu {
+        -webkit-box-shadow: 0 0 12px #585858 inset;
+        -khtml-box-shadow: 0 0 12px #585858 inset;
+        -moz-box-shadow: 0 0 12px #585858 inset;
+        -ms-box-shadow: 0 0 12px #585858 inset;
+        -o-box-shadow: 0 0 12px #585858 inset;
+        box-shadow: 0 0 12px #585858 inset;
+        display: block; }
+      .panel ul > li:not(.header) {
+        display: none; }
+        .panel ul > li:not(.header):hover {
+          background: rgba(80, 80, 80, 0.1); }
+          .panel ul > li:not(.header):hover span {
+            opacity: 1; }
+            .panel ul > li:not(.header):hover span i {
+              -webkit-animation: go-right 1s infinite linear;
+              -khtml-animation: go-right 1s infinite linear;
+              -moz-animation: go-right 1s infinite linear;
+              -ms-animation: go-right 1s infinite linear;
+              -o-animation: go-right 1s infinite linear;
+              animation: go-right 1s infinite linear; }
+        .panel ul > li:not(.header) span {
+          opacity: 0;
+          -webkit-transition: opacity 300ms ease;
+          -khtml-transition: opacity 300ms ease;
+          -moz-transition: opacity 300ms ease;
+          -ms-transition: opacity 300ms ease;
+          -o-transition: opacity 300ms ease;
+          transition: opacity 300ms ease; }
+      .panel ul > li.header:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 75%;
+        opacity: 0;
+        background-color: #323232;
+        height: 2px;
+        content: '';
+        -webkit-transition: width 300ms ease, opacity 200ms ease;
+        -khtml-transition: width 300ms ease, opacity 200ms ease;
+        -moz-transition: width 300ms ease, opacity 200ms ease;
+        -ms-transition: width 300ms ease, opacity 200ms ease;
+        -o-transition: width 300ms ease, opacity 200ms ease;
+        transition: width 300ms ease, opacity 200ms ease; }
+      .panel ul > li.header:hover span i {
+        -webkit-animation: go-down 1s infinite linear;
+        -khtml-animation: go-down 1s infinite linear;
+        -moz-animation: go-down 1s infinite linear;
+        -ms-animation: go-down 1s infinite linear;
+        -o-animation: go-down 1s infinite linear;
+        animation: go-down 1s infinite linear; }
+      .panel ul > li .submenu {
+        position: absolute;
+        left: 100%;
+        top: 0;
+        background: rgba(255, 255, 255, 0.6);
+        display: none;
+        min-width: 50px;
+        -webkit-border-radius: 0 2px 2px 2px;
+        -khtml-border-radius: 0 2px 2px 2px;
+        -moz-border-radius: 0 2px 2px 2px;
+        -ms-border-radius: 0 2px 2px 2px;
+        -o-border-radius: 0 2px 2px 2px;
+        border-radius: 0 2px 2px 2px;
+        -webkit-transition: background 300ms ease;
+        -khtml-transition: background 300ms ease;
+        -moz-transition: background 300ms ease;
+        -ms-transition: background 300ms ease;
+        -o-transition: background 300ms ease;
+        transition: background 300ms ease; }
+        .panel ul > li .submenu:hover {
+          background: rgba(255, 255, 255, 0.8); }
+        .panel ul > li .submenu.large {
+          min-width: 100px; }
+        .panel ul > li .submenu li.active {
+          background: rgba(80, 80, 80, 0.07); }
+      .panel ul > li input[type=range] {
+        min-width: 120px;
+        -webkit-appearance: none;
+        -khtml-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        margin: 10px 3px;
+        width: calc(100% - 6px); }
+        .panel ul > li input[type=range]:focus {
+          outline: none; }
+          .panel ul > li input[type=range]:focus::-webkit-slider-runnable-track {
+            background: #777; }
+          .panel ul > li input[type=range]:focus::-ms-fill-lower {
+            background: #777; }
+          .panel ul > li input[type=range]:focus::-ms-fill-upper {
+            background: #777; }
+        .panel ul > li input[type=range]::-webkit-slider-runnable-track {
+          width: 100%;
+          height: 12.8px;
+          cursor: pointer;
+          box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+          background: #777;
+          border-radius: 1px;
+          border: 0px solid #000101; }
+        .panel ul > li input[type=range]::-webkit-slider-thumb {
+          box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5) inset, 0px 0px 1px rgba(0, 0, 0, 0.5);
+          border: 0px solid rgba(0, 0, 0, 0.5);
+          height: 25px;
+          width: 25px;
+          border-radius: 50%;
+          background: #aaa;
+          cursor: pointer;
+          -webkit-appearance: none;
+          -khtml-appearance: none;
+          -moz-appearance: none;
+          -ms-appearance: none;
+          -o-appearance: none;
+          appearance: none;
+          margin-top: -4.6px; }
+        .panel ul > li input[type=range]::-moz-range-track {
+          width: 100%;
+          height: 12.8px;
+          cursor: pointer;
+          box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+          background: #777;
+          border-radius: 25px;
+          border: 0px solid #000101; }
+        .panel ul > li input[type=range]::-moz-range-thumb {
+          box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+          border: 0px solid #000000;
+          height: 20px;
+          width: 39px;
+          border-radius: 7px;
+          background: #65001c;
+          cursor: pointer; }
+        .panel ul > li input[type=range]::-ms-track {
+          width: 100%;
+          height: 12.8px;
+          cursor: pointer;
+          background: transparent;
+          border-color: transparent;
+          border-width: 39px 0;
+          color: transparent; }
+        .panel ul > li input[type=range]::-ms-fill-lower {
+          background: #777;
+          border: 0px solid #000101;
+          border-radius: 50px;
+          box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d; }
+        .panel ul > li input[type=range]::-ms-fill-upper {
+          background: #777;
+          border: 0px solid #000101;
+          border-radius: 50px;
+          box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d; }
+        .panel ul > li input[type=range]::-ms-thumb {
+          box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+          border: 0px solid #000000;
+          height: 20px;
+          width: 39px;
+          border-radius: 7px;
+          background: #65001c;
+          cursor: pointer; }
+
+.field {
+  width: 500px;
+  height: 700px;
+  background-color: #087108;
+  border: solid 5px white;
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+  background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+  background-image: linear-gradient(left, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  -khtml-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  -ms-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  -webkit-transform: rotateX(0deg) translate3d(0, 0px, 0px) rotate(0deg);
+  -khtml-transform: rotateX(0deg) translate3d(0, 0px, 0px) rotate(0deg);
+  -moz-transform: rotateX(0deg) translate3d(0, 0px, 0px) rotate(0deg);
+  -ms-transform: rotateX(0deg) translate3d(0, 0px, 0px) rotate(0deg);
+  -o-transform: rotateX(0deg) translate3d(0, 0px, 0px) rotate(0deg);
+  transform: rotateX(0deg) translate3d(0, 0px, 0px) rotate(0deg);
+  -webkit-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: transform 0.5s ease, background 300ms ease;
+  -khtml-transition: transform 0.5s ease, background 300ms ease;
+  -moz-transition: transform 0.5s ease, background 300ms ease;
+  -ms-transition: transform 0.5s ease, background 300ms ease;
+  -o-transition: transform 0.5s ease, background 300ms ease;
+  transition: transform 0.5s ease, background 300ms ease;
+  -webkit-transform-style: preserve-3d;
+  -khtml-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d; }
+  .field._3d.front {
+    -webkit-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(0deg);
+    -khtml-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(0deg);
+    -moz-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(0deg);
+    -ms-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(0deg);
+    -o-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(0deg);
+    transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(0deg); }
+    .field._3d.front .score.local, .field._3d.front .score.visitant {
+      -webkit-transform: rotatex(-68deg) translate3d(0, -100px, 30px);
+      -khtml-transform: rotatex(-68deg) translate3d(0, -100px, 30px);
+      -moz-transform: rotatex(-68deg) translate3d(0, -100px, 30px);
+      -ms-transform: rotatex(-68deg) translate3d(0, -100px, 30px);
+      -o-transform: rotatex(-68deg) translate3d(0, -100px, 30px);
+      transform: rotatex(-68deg) translate3d(0, -100px, 30px); }
+  .field._3d.back {
+    -webkit-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(-180deg);
+    -khtml-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(-180deg);
+    -moz-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(-180deg);
+    -ms-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(-180deg);
+    -o-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(-180deg);
+    transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(-180deg); }
+    .field._3d.back .player {
+      -webkit-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(180deg);
+      -khtml-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(180deg);
+      -moz-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(180deg);
+      -ms-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(180deg);
+      -o-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(180deg);
+      transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(180deg); }
+    .field._3d.back .score.local, .field._3d.back .score.visitant {
+      top: initial;
+      bottom: 0;
+      -webkit-transform: rotatex(-106deg) rotatey(180deg) translate3d(0, -100px, 30px);
+      -khtml-transform: rotatex(-106deg) rotatey(180deg) translate3d(0, -100px, 30px);
+      -moz-transform: rotatex(-106deg) rotatey(180deg) translate3d(0, -100px, 30px);
+      -ms-transform: rotatex(-106deg) rotatey(180deg) translate3d(0, -100px, 30px);
+      -o-transform: rotatex(-106deg) rotatey(180deg) translate3d(0, -100px, 30px);
+      transform: rotatex(-106deg) rotatey(180deg) translate3d(0, -100px, 30px); }
+  .field._3d.side_right {
+    -webkit-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(90deg);
+    -khtml-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(90deg);
+    -moz-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(90deg);
+    -ms-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(90deg);
+    -o-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(90deg);
+    transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(90deg); }
+    .field._3d.side_right .team.local .player {
+      -webkit-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(65deg);
+      -khtml-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(65deg);
+      -moz-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(65deg);
+      -ms-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(65deg);
+      -o-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(65deg);
+      transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(65deg); }
+    .field._3d.side_right .team.visitant .player {
+      -webkit-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(-255deg);
+      -khtml-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(-255deg);
+      -moz-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(-255deg);
+      -ms-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(-255deg);
+      -o-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(-255deg);
+      transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(-255deg); }
+    .field._3d.side_right .score.local, .field._3d.side_right .score.visitant {
+      margin: auto;
+      left: 0;
+      right: 0; }
+    .field._3d.side_right .score.local {
+      -webkit-transform: rotatex(-90deg) rotatey(90deg) translate3d(0px, -150px, -300px);
+      -khtml-transform: rotatex(-90deg) rotatey(90deg) translate3d(0px, -150px, -300px);
+      -moz-transform: rotatex(-90deg) rotatey(90deg) translate3d(0px, -150px, -300px);
+      -ms-transform: rotatex(-90deg) rotatey(90deg) translate3d(0px, -150px, -300px);
+      -o-transform: rotatex(-90deg) rotatey(90deg) translate3d(0px, -150px, -300px);
+      transform: rotatex(-90deg) rotatey(90deg) translate3d(0px, -150px, -300px); }
+    .field._3d.side_right .score.visitant {
+      -webkit-transform: rotatex(-90deg) rotatey(90deg) translate3d(-450px, -150px, -300px);
+      -khtml-transform: rotatex(-90deg) rotatey(90deg) translate3d(-450px, -150px, -300px);
+      -moz-transform: rotatex(-90deg) rotatey(90deg) translate3d(-450px, -150px, -300px);
+      -ms-transform: rotatex(-90deg) rotatey(90deg) translate3d(-450px, -150px, -300px);
+      -o-transform: rotatex(-90deg) rotatey(90deg) translate3d(-450px, -150px, -300px);
+      transform: rotatex(-90deg) rotatey(90deg) translate3d(-450px, -150px, -300px); }
+  .field._3d.side_left {
+    -webkit-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(-90deg);
+    -khtml-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(-90deg);
+    -moz-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(-90deg);
+    -ms-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(-90deg);
+    -o-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(-90deg);
+    transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(-90deg); }
+    .field._3d.side_left .team.local .player {
+      -webkit-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(-65deg);
+      -khtml-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(-65deg);
+      -moz-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(-65deg);
+      -ms-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(-65deg);
+      -o-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(-65deg);
+      transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(-65deg); }
+    .field._3d.side_left .team.visitant .player {
+      -webkit-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(255deg);
+      -khtml-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(255deg);
+      -moz-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(255deg);
+      -ms-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(255deg);
+      -o-transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(255deg);
+      transform: rotatex(-90deg) translate3d(0, -30px, 0) rotateY(255deg); }
+    .field._3d.side_left .score.local, .field._3d.side_left .score.visitant {
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0; }
+    .field._3d.side_left .score.local {
+      -webkit-transform: rotatex(-89deg) rotatey(-90deg) translate3d(-100px, 125px, -300px);
+      -khtml-transform: rotatex(-89deg) rotatey(-90deg) translate3d(-100px, 125px, -300px);
+      -moz-transform: rotatex(-89deg) rotatey(-90deg) translate3d(-100px, 125px, -300px);
+      -ms-transform: rotatex(-89deg) rotatey(-90deg) translate3d(-100px, 125px, -300px);
+      -o-transform: rotatex(-89deg) rotatey(-90deg) translate3d(-100px, 125px, -300px);
+      transform: rotatex(-89deg) rotatey(-90deg) translate3d(-100px, 125px, -300px); }
+    .field._3d.side_left .score.visitant {
+      -webkit-transform: rotatex(-89deg) rotatey(-90deg) translate3d(300px, 125px, -300px);
+      -khtml-transform: rotatex(-89deg) rotatey(-90deg) translate3d(300px, 125px, -300px);
+      -moz-transform: rotatex(-89deg) rotatey(-90deg) translate3d(300px, 125px, -300px);
+      -ms-transform: rotatex(-89deg) rotatey(-90deg) translate3d(300px, 125px, -300px);
+      -o-transform: rotatex(-89deg) rotatey(-90deg) translate3d(300px, 125px, -300px);
+      transform: rotatex(-89deg) rotatey(-90deg) translate3d(300px, 125px, -300px); }
+  .field._3d .goalTop:before,
+  .field._3d .goalBottom:before {
+    background: rgba(0, 0, 0, 0.1); }
+  .field._3d .goalTop .crossbar,
+  .field._3d .goalBottom .crossbar {
+    opacity: 1; }
+  .field._3d .team.local .player {
+    background-color: rgba(255, 255, 255, 0.6); }
+  .field._3d .team.visitant .player {
+    background-color: rgba(130, 130, 130, 0.6); }
+  .field._3d .team .player {
+    -webkit-transform: rotatex(-90deg) translate3d(0, -50px, 0);
+    -khtml-transform: rotatex(-90deg) translate3d(0, -50px, 0);
+    -moz-transform: rotatex(-90deg) translate3d(0, -50px, 0);
+    -ms-transform: rotatex(-90deg) translate3d(0, -50px, 0);
+    -o-transform: rotatex(-90deg) translate3d(0, -50px, 0);
+    transform: rotatex(-90deg) translate3d(0, -50px, 0);
+    -webkit-transform-origin: center;
+    -khtml-transform-origin: center;
+    -moz-transform-origin: center;
+    -ms-transform-origin: center;
+    -o-transform-origin: center;
+    transform-origin: center; }
+    .field._3d .team .player:before {
+      top: -65%; }
+  .field.animation {
+    -webkit-animation: groundPerspective 40s infinite linear;
+    -khtml-animation: groundPerspective 40s infinite linear;
+    -moz-animation: groundPerspective 40s infinite linear;
+    -ms-animation: groundPerspective 40s infinite linear;
+    -o-animation: groundPerspective 40s infinite linear;
+    animation: groundPerspective 40s infinite linear; }
+    .field.animation .team .player {
+      opacity: .8; }
+  .field.move {
+    -webkit-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn) !important;
+    -khtml-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn) !important;
+    -moz-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn) !important;
+    -ms-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn) !important;
+    -o-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn) !important;
+    transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn) !important; }
+  .field:after, .field:before {
+    content: '';
+    position: absolute;
+    margin: auto; }
+  .field:after {
+    width: 100%;
+    height: 5px;
+    top: 0;
+    bottom: 0;
+    background: white; }
+  .field:before {
+    width: 35%;
+    height: 25%;
+    border-radius: 50%;
+    border: 5px solid white;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .field .goalTop,
+  .field .goalBottom {
+    position: absolute;
+    border: 5px solid white;
+    margin: auto;
+    width: 65%;
+    left: 0;
+    right: 0;
+    min-height: 150px;
+    -webkit-transform-style: preserve-3d;
+    -khtml-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: background 300ms 100ms ease;
+    -khtml-transition: background 300ms 100ms ease;
+    -moz-transition: background 300ms 100ms ease;
+    -ms-transition: background 300ms 100ms ease;
+    -o-transition: background 300ms 100ms ease;
+    transition: background 300ms 100ms ease; }
+    .field .goalTop:before,
+    .field .goalBottom:before {
+      position: absolute;
+      content: '';
+      width: 50%;
+      height: 50%;
+      border: 5px solid white;
+      margin: auto;
+      left: 0;
+      right: 0;
+      -webkit-transition: transform 0.3s ease;
+      -khtml-transition: transform 0.3s ease;
+      -moz-transition: transform 0.3s ease;
+      -ms-transition: transform 0.3s ease;
+      -o-transition: transform 0.3s ease;
+      transition: transform 0.3s ease; }
+    .field .goalTop:after,
+    .field .goalBottom:after {
+      border-radius: 50%;
+      width: 5px;
+      height: 5px;
+      content: '';
+      background: white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto; }
+    .field .goalTop .crossbar,
+    .field .goalBottom .crossbar {
+      position: absolute;
+      margin: auto;
+      opacity: 0;
+      border-color: white !important;
+      -webkit-transition: opacity 0.25s ease;
+      -khtml-transition: opacity 0.25s ease;
+      -moz-transition: opacity 0.25s ease;
+      -ms-transition: opacity 0.25s ease;
+      -o-transition: opacity 0.25s ease;
+      transition: opacity 0.25s ease; }
+      .field .goalTop .crossbar.back,
+      .field .goalBottom .crossbar.back {
+        width: 50%;
+        height: 50%;
+        left: 0;
+        right: 0; }
+      .field .goalTop .crossbar.front,
+      .field .goalBottom .crossbar.front {
+        width: 50%;
+        height: 50%;
+        left: 0;
+        right: 0; }
+      .field .goalTop .crossbar.bottom,
+      .field .goalBottom .crossbar.bottom {
+        width: 50%;
+        height: 60px;
+        left: 0;
+        right: 0; }
+      .field .goalTop .crossbar.top,
+      .field .goalBottom .crossbar.top {
+        width: 50%;
+        height: 65px;
+        left: 0;
+        right: 0; }
+    .field .goalTop .half-moon,
+    .field .goalBottom .half-moon {
+      position: absolute;
+      overflow: hidden;
+      width: 45px;
+      height: 30px;
+      left: 0;
+      right: 0;
+      margin: auto; }
+      .field .goalTop .half-moon:after,
+      .field .goalBottom .half-moon:after {
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        border: solid 5px white;
+        content: '';
+        background: #048804;
+        -webkit-border-radius: 50%;
+        -khtml-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%;
+        -webkit-box-sizing: border-box;
+        -khtml-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: background 300ms 150ms ease;
+        -khtml-transition: background 300ms 150ms ease;
+        -moz-transition: background 300ms 150ms ease;
+        -ms-transition: background 300ms 150ms ease;
+        -o-transition: background 300ms 150ms ease;
+        transition: background 300ms 150ms ease; }
+  .field .goalTop {
+    top: 0;
+    border-top: none; }
+    .field .goalTop:after {
+      top: 50%; }
+    .field .goalTop:before {
+      top: 0;
+      border-top: none; }
+    .field .goalTop .crossbar.back {
+      border: solid 5px;
+      border-top: 0;
+      background-size: 4px;
+      -webkit-transform-origin: top center;
+      -khtml-transform-origin: top center;
+      -moz-transform-origin: top center;
+      -ms-transform-origin: top center;
+      -o-transform-origin: top center;
+      transform-origin: top center;
+      -webkit-transform: rotatex(90deg) translate3d(0, 0px, 65px);
+      -khtml-transform: rotatex(90deg) translate3d(0, 0px, 65px);
+      -moz-transform: rotatex(90deg) translate3d(0, 0px, 65px);
+      -ms-transform: rotatex(90deg) translate3d(0, 0px, 65px);
+      -o-transform: rotatex(90deg) translate3d(0, 0px, 65px);
+      transform: rotatex(90deg) translate3d(0, 0px, 65px);
+      background-image: -webkit-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+      background-image: -khtml-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+      background-image: -moz-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+      background-image: -ms-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+      background-image: -o-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+      background-image: linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+      -webkit-transform-style: preserve-3d;
+      -khtml-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      -ms-transform-style: preserve-3d;
+      -o-transform-style: preserve-3d;
+      transform-style: preserve-3d; }
+      .field .goalTop .crossbar.back:before {
+        position: absolute;
+        top: -1%;
+        left: -2%;
+        width: 40%;
+        height: 105%;
+        content: '';
+        background-size: 4px;
+        background-image: -webkit-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: -khtml-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: -moz-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: -ms-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: -o-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        -webkit-transform: rotatey(90deg);
+        -khtml-transform: rotatey(90deg);
+        -moz-transform: rotatey(90deg);
+        -ms-transform: rotatey(90deg);
+        -o-transform: rotatey(90deg);
+        transform: rotatey(90deg);
+        -webkit-transform-origin: left;
+        -khtml-transform-origin: left;
+        -moz-transform-origin: left;
+        -ms-transform-origin: left;
+        -o-transform-origin: left;
+        transform-origin: left; }
+      .field .goalTop .crossbar.back:after {
+        position: absolute;
+        top: -1%;
+        right: -2%;
+        width: 40%;
+        height: 105%;
+        content: '';
+        background-size: 4px;
+        background-image: -webkit-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: -khtml-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: -moz-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: -ms-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: -o-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        -webkit-transform: rotatey(-90deg);
+        -khtml-transform: rotatey(-90deg);
+        -moz-transform: rotatey(-90deg);
+        -ms-transform: rotatey(-90deg);
+        -o-transform: rotatey(-90deg);
+        transform: rotatey(-90deg);
+        -webkit-transform-origin: right;
+        -khtml-transform-origin: right;
+        -moz-transform-origin: right;
+        -ms-transform-origin: right;
+        -o-transform-origin: right;
+        transform-origin: right; }
+    .field .goalTop .crossbar.front {
+      border: solid 5px;
+      border-top: 0;
+      -webkit-transform-origin: top center;
+      -khtml-transform-origin: top center;
+      -moz-transform-origin: top center;
+      -ms-transform-origin: top center;
+      -o-transform-origin: top center;
+      transform-origin: top center;
+      -webkit-transform: rotatex(90deg) translate3d(0, 0px, 0px);
+      -khtml-transform: rotatex(90deg) translate3d(0, 0px, 0px);
+      -moz-transform: rotatex(90deg) translate3d(0, 0px, 0px);
+      -ms-transform: rotatex(90deg) translate3d(0, 0px, 0px);
+      -o-transform: rotatex(90deg) translate3d(0, 0px, 0px);
+      transform: rotatex(90deg) translate3d(0, 0px, 0px); }
+    .field .goalTop .crossbar.bottom {
+      border: solid 5px;
+      border-top: 0;
+      background-color: #087108;
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+      background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+      background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+      background-image: linear-gradient(left, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+      -webkit-transform-origin: top center;
+      -khtml-transform-origin: top center;
+      -moz-transform-origin: top center;
+      -ms-transform-origin: top center;
+      -o-transform-origin: top center;
+      transform-origin: top center;
+      -webkit-transform: rotatex(180deg);
+      -khtml-transform: rotatex(180deg);
+      -moz-transform: rotatex(180deg);
+      -ms-transform: rotatex(180deg);
+      -o-transform: rotatex(180deg);
+      transform: rotatex(180deg); }
+    .field .goalTop .crossbar.top {
+      border: solid 5px;
+      border-top: 0;
+      border-bottom: 0;
+      -webkit-transform-origin: top center;
+      -khtml-transform-origin: top center;
+      -moz-transform-origin: top center;
+      -ms-transform-origin: top center;
+      -o-transform-origin: top center;
+      transform-origin: top center;
+      -webkit-transform: rotatex(180deg) translate3d(0, 0, -78px);
+      -khtml-transform: rotatex(180deg) translate3d(0, 0, -78px);
+      -moz-transform: rotatex(180deg) translate3d(0, 0, -78px);
+      -ms-transform: rotatex(180deg) translate3d(0, 0, -78px);
+      -o-transform: rotatex(180deg) translate3d(0, 0, -78px);
+      transform: rotatex(180deg) translate3d(0, 0, -78px);
+      background-size: 8px;
+      background-image: -webkit-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+      background-image: -khtml-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+      background-image: -moz-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+      background-image: -ms-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+      background-image: -o-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+      background-image: linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%); }
+    .field .goalTop .half-moon {
+      top: 103%; }
+      .field .goalTop .half-moon:after {
+        top: -100%; }
+  .field .goalBottom {
+    bottom: 0;
+    border-bottom: none; }
+    .field .goalBottom:after {
+      bottom: 50%; }
+    .field .goalBottom:before {
+      bottom: 0;
+      border-bottom: none; }
+    .field .goalBottom .crossbar {
+      bottom: 0; }
+      .field .goalBottom .crossbar.back {
+        border: solid 5px;
+        border-bottom: 0;
+        background-size: 4px;
+        -webkit-transform-origin: bottom center;
+        -khtml-transform-origin: bottom center;
+        -moz-transform-origin: bottom center;
+        -ms-transform-origin: bottom center;
+        -o-transform-origin: bottom center;
+        transform-origin: bottom center;
+        -webkit-transform: rotatex(-90deg) translate3d(0, 0px, 65px);
+        -khtml-transform: rotatex(-90deg) translate3d(0, 0px, 65px);
+        -moz-transform: rotatex(-90deg) translate3d(0, 0px, 65px);
+        -ms-transform: rotatex(-90deg) translate3d(0, 0px, 65px);
+        -o-transform: rotatex(-90deg) translate3d(0, 0px, 65px);
+        transform: rotatex(-90deg) translate3d(0, 0px, 65px);
+        background-image: -webkit-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: -khtml-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: -moz-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: -ms-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: -o-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        -webkit-transform-style: preserve-3d;
+        -khtml-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        -o-transform-style: preserve-3d;
+        transform-style: preserve-3d; }
+        .field .goalBottom .crossbar.back:before {
+          position: absolute;
+          top: -5%;
+          left: -2%;
+          width: 40%;
+          height: 105%;
+          content: '';
+          background-size: 4px;
+          background-image: -webkit-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+          background-image: -khtml-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+          background-image: -moz-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+          background-image: -ms-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+          background-image: -o-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+          background-image: linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+          -webkit-transform: rotatey(90deg);
+          -khtml-transform: rotatey(90deg);
+          -moz-transform: rotatey(90deg);
+          -ms-transform: rotatey(90deg);
+          -o-transform: rotatey(90deg);
+          transform: rotatey(90deg);
+          -webkit-transform-origin: left;
+          -khtml-transform-origin: left;
+          -moz-transform-origin: left;
+          -ms-transform-origin: left;
+          -o-transform-origin: left;
+          transform-origin: left; }
+        .field .goalBottom .crossbar.back:after {
+          position: absolute;
+          top: -4%;
+          right: -2%;
+          width: 40%;
+          height: 105%;
+          content: '';
+          background-size: 4px;
+          background-image: -webkit-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+          background-image: -khtml-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+          background-image: -moz-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+          background-image: -ms-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+          background-image: -o-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+          background-image: linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+          -webkit-transform: rotatey(-90deg);
+          -khtml-transform: rotatey(-90deg);
+          -moz-transform: rotatey(-90deg);
+          -ms-transform: rotatey(-90deg);
+          -o-transform: rotatey(-90deg);
+          transform: rotatey(-90deg);
+          -webkit-transform-origin: right;
+          -khtml-transform-origin: right;
+          -moz-transform-origin: right;
+          -ms-transform-origin: right;
+          -o-transform-origin: right;
+          transform-origin: right; }
+      .field .goalBottom .crossbar.front {
+        border: solid 5px;
+        border-bottom: 0;
+        -webkit-transform-origin: bottom center;
+        -khtml-transform-origin: bottom center;
+        -moz-transform-origin: bottom center;
+        -ms-transform-origin: bottom center;
+        -o-transform-origin: bottom center;
+        transform-origin: bottom center;
+        -webkit-transform: rotatex(-90deg) translate3d(0, 0px, 0px);
+        -khtml-transform: rotatex(-90deg) translate3d(0, 0px, 0px);
+        -moz-transform: rotatex(-90deg) translate3d(0, 0px, 0px);
+        -ms-transform: rotatex(-90deg) translate3d(0, 0px, 0px);
+        -o-transform: rotatex(-90deg) translate3d(0, 0px, 0px);
+        transform: rotatex(-90deg) translate3d(0, 0px, 0px); }
+      .field .goalBottom .crossbar.bottom {
+        border: solid 5px;
+        border-bottom: 0;
+        background-size: 40px 40px;
+        background-position: 0 0, 20px 20px;
+        background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+        background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+        background-image: linear-gradient(left, rgba(255, 255, 255, 0.1) 50%, transparent 50%);
+        -webkit-transform-origin: bottom center;
+        -khtml-transform-origin: bottom center;
+        -moz-transform-origin: bottom center;
+        -ms-transform-origin: bottom center;
+        -o-transform-origin: bottom center;
+        transform-origin: bottom center;
+        -webkit-transform: rotatex(-180deg);
+        -khtml-transform: rotatex(-180deg);
+        -moz-transform: rotatex(-180deg);
+        -ms-transform: rotatex(-180deg);
+        -o-transform: rotatex(-180deg);
+        transform: rotatex(-180deg);
+        background-color: #087108; }
+      .field .goalBottom .crossbar.top {
+        border: solid 5px;
+        border-top: 0;
+        border-bottom: 0;
+        -webkit-transform-origin: bottom center;
+        -khtml-transform-origin: bottom center;
+        -moz-transform-origin: bottom center;
+        -ms-transform-origin: bottom center;
+        -o-transform-origin: bottom center;
+        transform-origin: bottom center;
+        -webkit-transform: rotatex(-180deg) translate3d(0, 0, -78px);
+        -khtml-transform: rotatex(-180deg) translate3d(0, 0, -78px);
+        -moz-transform: rotatex(-180deg) translate3d(0, 0, -78px);
+        -ms-transform: rotatex(-180deg) translate3d(0, 0, -78px);
+        -o-transform: rotatex(-180deg) translate3d(0, 0, -78px);
+        transform: rotatex(-180deg) translate3d(0, 0, -78px);
+        background-size: 8px;
+        background-image: -webkit-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: -khtml-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: -moz-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: -ms-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: -o-linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%);
+        background-image: linear-gradient(65deg, rgba(255, 0, 0, 0) 50%, white 50%); }
+    .field .goalBottom .half-moon {
+      top: -23%; }
+      .field .goalBottom .half-moon:after {
+        top: 45%; }
+  .field .team {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    left: 0; }
+    .field .team[team="colombia"] .player {
+      background-image: url(../images/colombia.png); }
+    .field .team[team="argentina"] .player {
+      background-image: url(../images/argentina.png);
+      background-color: #828282;
+      background-size: 80%; }
+    .field .team[team="brasil"] .player {
+      background-image: url(../images/brasil.png);
+      background-size: 80%;
+      background-position: 56% 55%; }
+    .field .team[team="peru"] .player {
+      background-image: url(../images/peru.png);
+      background-size: 80%;
+      background-position: 50% 71%; }
+    .field .team[team="ecuador"] .player {
+      background-image: url(../images/ecuador.png);
+      background-size: 80%;
+      background-position: 50% 70%; }
+    .field .team.local {
+      top: 0; }
+      .field .team.local .player.goalkeepper {
+        top: 1rem;
+        left: 0;
+        right: 0; }
+      .field .team.local .player.defense {
+        top: calc(3rem + 50px); }
+        .field .team.local .player.defense.central {
+          left: 0;
+          right: 0; }
+          .field .team.local .player.defense.central__left {
+            left: calc(-3rem - 60px); }
+          .field .team.local .player.defense.central__right {
+            right: calc(-3rem - 60px); }
+        .field .team.local .player.defense.lateral {
+          top: calc(4rem + 50px); }
+          .field .team.local .player.defense.lateral__left {
+            left: 2rem; }
+          .field .team.local .player.defense.lateral__right {
+            right: 2rem; }
+      .field .team.local .player.flyers {
+        top: calc(8rem + 50px); }
+        .field .team.local .player.flyers.central {
+          left: 0;
+          right: 0; }
+        .field .team.local .player.flyers.lateral {
+          top: calc(9rem + 50px); }
+          .field .team.local .player.flyers.lateral__left {
+            left: 7rem; }
+          .field .team.local .player.flyers.lateral__right {
+            right: 7rem; }
+      .field .team.local .player.forward {
+        top: calc(13rem + 50px); }
+        .field .team.local .player.forward.central {
+          left: 0;
+          right: 0;
+          top: calc(15rem + 50px); }
+        .field .team.local .player.forward.lateral {
+          top: calc(14rem + 50px); }
+          .field .team.local .player.forward.lateral__left {
+            left: 5rem; }
+          .field .team.local .player.forward.lateral__right {
+            right: 5rem; }
+    .field .team.visitant {
+      bottom: 0; }
+      .field .team.visitant .player.goalkeepper {
+        bottom: 1rem;
+        left: 0;
+        right: 0; }
+      .field .team.visitant .player.defense {
+        bottom: calc(3rem + 50px); }
+        .field .team.visitant .player.defense.central {
+          left: 0;
+          right: 0; }
+          .field .team.visitant .player.defense.central__left {
+            left: calc(-3rem - 60px); }
+          .field .team.visitant .player.defense.central__right {
+            right: calc(-3rem - 60px); }
+        .field .team.visitant .player.defense.lateral {
+          bottom: calc(4rem + 50px); }
+          .field .team.visitant .player.defense.lateral__left {
+            left: 2rem; }
+          .field .team.visitant .player.defense.lateral__right {
+            right: 2rem; }
+      .field .team.visitant .player.flyers {
+        bottom: calc(8rem + 50px); }
+        .field .team.visitant .player.flyers.central {
+          left: 0;
+          right: 0; }
+        .field .team.visitant .player.flyers.lateral {
+          bottom: calc(9rem + 50px); }
+          .field .team.visitant .player.flyers.lateral__left {
+            left: 7rem; }
+          .field .team.visitant .player.flyers.lateral__right {
+            right: 7rem; }
+      .field .team.visitant .player.forward {
+        bottom: calc(13rem + 50px); }
+        .field .team.visitant .player.forward.central {
+          left: 0;
+          right: 0;
+          top: calc(0rem - -7px); }
+        .field .team.visitant .player.forward.lateral {
+          bottom: calc(14rem + 50px); }
+          .field .team.visitant .player.forward.lateral__left {
+            left: 5rem; }
+          .field .team.visitant .player.forward.lateral__right {
+            right: 5rem; }
+    .field .team .player {
+      position: absolute;
+      margin: auto;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.3);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      -webkit-transition: transform 0.2s ease, box-shadow 0.3s ease, background 300ms ease;
+      -khtml-transition: transform 0.2s ease, box-shadow 0.3s ease, background 300ms ease;
+      -moz-transition: transform 0.2s ease, box-shadow 0.3s ease, background 300ms ease;
+      -ms-transition: transform 0.2s ease, box-shadow 0.3s ease, background 300ms ease;
+      -o-transition: transform 0.2s ease, box-shadow 0.3s ease, background 300ms ease;
+      transition: transform 0.2s ease, box-shadow 0.3s ease, background 300ms ease;
+      -webkit-transform-style: preserve-3d;
+      -khtml-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      -ms-transform-style: preserve-3d;
+      -o-transform-style: preserve-3d;
+      transform-style: preserve-3d; }
+      .field .team .player:before {
+        position: absolute;
+        content: attr(name);
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        text-transform: capitalize;
+        top: 110%;
+        left: -50%;
+        text-align: center;
+        width: 180%;
+        display: block;
+        padding: .15rem .35rem;
+        opacity: 0;
+        font-size: 12px;
+        font-family: Helvetica;
+        -webkit-transition: opacity 0.5s ease, transform 0.3s ease;
+        -khtml-transition: opacity 0.5s ease, transform 0.3s ease;
+        -moz-transition: opacity 0.5s ease, transform 0.3s ease;
+        -ms-transition: opacity 0.5s ease, transform 0.3s ease;
+        -o-transition: opacity 0.5s ease, transform 0.3s ease;
+        transition: opacity 0.5s ease, transform 0.3s ease;
+        -webkit-transform: translatey(80%);
+        -khtml-transform: translatey(80%);
+        -moz-transform: translatey(80%);
+        -ms-transform: translatey(80%);
+        -o-transform: translatey(80%);
+        transform: translatey(80%);
+        -webkit-border-radius: 3px;
+        -khtml-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+        border-radius: 3px; }
+      .field .team .player.active, .field .team .player:hover {
+        -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+        -khtml-box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+        -ms-box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+        -o-box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); }
+        .field .team .player.active:before, .field .team .player:hover:before {
+          opacity: 1;
+          -webkit-transform: translatey(0%);
+          -khtml-transform: translatey(0%);
+          -moz-transform: translatey(0%);
+          -ms-transform: translatey(0%);
+          -o-transform: translatey(0%);
+          transform: translatey(0%); }
+  .field .score {
+    font-family: 'Just Another Hand', cursive;
+    position: absolute;
+    top: 0;
+    -webkit-transition: transform 300ms ease, opacity 200ms ease;
+    -khtml-transition: transform 300ms ease, opacity 200ms ease;
+    -moz-transition: transform 300ms ease, opacity 200ms ease;
+    -ms-transition: transform 300ms ease, opacity 200ms ease;
+    -o-transition: transform 300ms ease, opacity 200ms ease;
+    transition: transform 300ms ease, opacity 200ms ease; }
+    .field .score.local {
+      left: -60%;
+      -webkit-transform: translate3d(-100px, 0px, -100px);
+      -khtml-transform: translate3d(-100px, 0px, -100px);
+      -moz-transform: translate3d(-100px, 0px, -100px);
+      -ms-transform: translate3d(-100px, 0px, -100px);
+      -o-transform: translate3d(-100px, 0px, -100px);
+      transform: translate3d(-100px, 0px, -100px); }
+    .field .score.visitant {
+      right: -60%;
+      -webkit-transform: translate3d(100px, 0px, -100px);
+      -khtml-transform: translate3d(100px, 0px, -100px);
+      -moz-transform: translate3d(100px, 0px, -100px);
+      -ms-transform: translate3d(100px, 0px, -100px);
+      -o-transform: translate3d(100px, 0px, -100px);
+      transform: translate3d(100px, 0px, -100px); }
+    .field .score.hide {
+      opacity: 0; }
+    .field .score span {
+      font-size: 3rem;
+      color: white;
+      -webkit-text-shadow: 0 0 2px #585858;
+      -khtml-text-shadow: 0 0 2px #585858;
+      -moz-text-shadow: 0 0 2px #585858;
+      -ms-text-shadow: 0 0 2px #585858;
+      -o-text-shadow: 0 0 2px #585858;
+      text-shadow: 0 0 2px #585858; }
+      .field .score span:first-child {
+        padding: .25rem 2.5rem .05rem;
+        background: rgba(255, 255, 255, 0.6);
+        -webkit-border-radius: 50%;
+        -khtml-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%;
+        font-size: 6rem;
+        -webkit-box-shadow: 0 0 12px #585858 inset;
+        -khtml-box-shadow: 0 0 12px #585858 inset;
+        -moz-box-shadow: 0 0 12px #585858 inset;
+        -ms-box-shadow: 0 0 12px #585858 inset;
+        -o-box-shadow: 0 0 12px #585858 inset;
+        box-shadow: 0 0 12px #585858 inset; }
+      .field .score span:last-child {
+        text-indent: 10px;
+        font-size: 5.5rem;
+        display: inline-block; }
+
+.controlsCamera {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 130px;
+  width: 300px;
+  margin: auto;
+  z-index: 10;
+  opacity: .3;
+  -webkit-border-radius: 0 3px 3px 0;
+  -khtml-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  -ms-border-radius: 0 3px 3px 0;
+  -o-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-transition: opacity 0.2s ease, box-shadow 0.35s ease;
+  -khtml-transition: opacity 0.2s ease, box-shadow 0.35s ease;
+  -moz-transition: opacity 0.2s ease, box-shadow 0.35s ease;
+  -ms-transition: opacity 0.2s ease, box-shadow 0.35s ease;
+  -o-transition: opacity 0.2s ease, box-shadow 0.35s ease;
+  transition: opacity 0.2s ease, box-shadow 0.35s ease;
+  -webkit-transform-origin: bottom center;
+  -khtml-transform-origin: bottom center;
+  -moz-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  -o-transform-origin: bottom center;
+  transform-origin: bottom center;
+  -webkit-transform: scale(0.8);
+  -khtml-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8); }
+  .controlsCamera:hover {
+    opacity: 1; }
+    .controlsCamera:hover + .field {
+      -webkit-transform: rotateX(0deg) translate3d(0, 0px, 0px) rotate(0deg) scale(0.7);
+      -khtml-transform: rotateX(0deg) translate3d(0, 0px, 0px) rotate(0deg) scale(0.7);
+      -moz-transform: rotateX(0deg) translate3d(0, 0px, 0px) rotate(0deg) scale(0.7);
+      -ms-transform: rotateX(0deg) translate3d(0, 0px, 0px) rotate(0deg) scale(0.7);
+      -o-transform: rotateX(0deg) translate3d(0, 0px, 0px) rotate(0deg) scale(0.7);
+      transform: rotateX(0deg) translate3d(0, 0px, 0px) rotate(0deg) scale(0.7); }
+      .controlsCamera:hover + .field._3d.front {
+        -webkit-transform: rotateX(50deg) translate3d(0, -150px, -100px) rotate(0deg) scale(0.85);
+        -khtml-transform: rotateX(50deg) translate3d(0, -150px, -100px) rotate(0deg) scale(0.85);
+        -moz-transform: rotateX(50deg) translate3d(0, -150px, -100px) rotate(0deg) scale(0.85);
+        -ms-transform: rotateX(50deg) translate3d(0, -150px, -100px) rotate(0deg) scale(0.85);
+        -o-transform: rotateX(50deg) translate3d(0, -150px, -100px) rotate(0deg) scale(0.85);
+        transform: rotateX(50deg) translate3d(0, -150px, -100px) rotate(0deg) scale(0.85); }
+      .controlsCamera:hover + .field._3d.back {
+        -webkit-transform: rotateX(50deg) translate3d(0, -150px, -100px) rotate(-180deg) scale(0.85);
+        -khtml-transform: rotateX(50deg) translate3d(0, -150px, -100px) rotate(-180deg) scale(0.85);
+        -moz-transform: rotateX(50deg) translate3d(0, -150px, -100px) rotate(-180deg) scale(0.85);
+        -ms-transform: rotateX(50deg) translate3d(0, -150px, -100px) rotate(-180deg) scale(0.85);
+        -o-transform: rotateX(50deg) translate3d(0, -150px, -100px) rotate(-180deg) scale(0.85);
+        transform: rotateX(50deg) translate3d(0, -150px, -100px) rotate(-180deg) scale(0.85); }
+      .controlsCamera:hover + .field._3d.side_right {
+        -webkit-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(90deg) scale(0.85);
+        -khtml-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(90deg) scale(0.85);
+        -moz-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(90deg) scale(0.85);
+        -ms-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(90deg) scale(0.85);
+        -o-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(90deg) scale(0.85);
+        transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(90deg) scale(0.85); }
+      .controlsCamera:hover + .field._3d.side_left {
+        -webkit-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(-90deg) scale(0.85);
+        -khtml-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(-90deg) scale(0.85);
+        -moz-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(-90deg) scale(0.85);
+        -ms-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(-90deg) scale(0.85);
+        -o-transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(-90deg) scale(0.85);
+        transform: rotateX(65deg) translate3d(0, -150px, -100px) rotate(-90deg) scale(0.85); }
+    .controlsCamera:hover .control {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      -khtml-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+      -o-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0); }
+  .controlsCamera svg {
+    max-width: 100% !important;
+    height: auto !important; }
+  .controlsCamera .control {
+    cursor: pointer;
+    color: white;
+    text-align: left;
+    font-family: Helvetica;
+    display: block;
+    padding: .15rem .5rem;
+    opacity: 0;
+    -webkit-transform: translate3d(-30px, 0, 0);
+    -khtml-transform: translate3d(-30px, 0, 0);
+    -moz-transform: translate3d(-30px, 0, 0);
+    -ms-transform: translate3d(-30px, 0, 0);
+    -o-transform: translate3d(-30px, 0, 0);
+    transform: translate3d(-30px, 0, 0);
+    -webkit-transition: opacity 0.2s ease, color 0.3s ease, transform 0.25s ease;
+    -khtml-transition: opacity 0.2s ease, color 0.3s ease, transform 0.25s ease;
+    -moz-transition: opacity 0.2s ease, color 0.3s ease, transform 0.25s ease;
+    -ms-transition: opacity 0.2s ease, color 0.3s ease, transform 0.25s ease;
+    -o-transition: opacity 0.2s ease, color 0.3s ease, transform 0.25s ease;
+    transition: opacity 0.2s ease, color 0.3s ease, transform 0.25s ease; }
+    .controlsCamera .control:nth-child(1) {
+      -webkit-transition-delay: 0.2s;
+      -khtml-transition-delay: 0.2s;
+      -moz-transition-delay: 0.2s;
+      -ms-transition-delay: 0.2s;
+      -o-transition-delay: 0.2s;
+      transition-delay: 0.2s; }
+    .controlsCamera .control:nth-child(2) {
+      -webkit-transition-delay: 0.3s;
+      -khtml-transition-delay: 0.3s;
+      -moz-transition-delay: 0.3s;
+      -ms-transition-delay: 0.3s;
+      -o-transition-delay: 0.3s;
+      transition-delay: 0.3s; }
+    .controlsCamera .control:nth-child(3) {
+      -webkit-transition-delay: 0.4s;
+      -khtml-transition-delay: 0.4s;
+      -moz-transition-delay: 0.4s;
+      -ms-transition-delay: 0.4s;
+      -o-transition-delay: 0.4s;
+      transition-delay: 0.4s; }
+    .controlsCamera .control:nth-child(4) {
+      -webkit-transition-delay: 0.5s;
+      -khtml-transition-delay: 0.5s;
+      -moz-transition-delay: 0.5s;
+      -ms-transition-delay: 0.5s;
+      -o-transition-delay: 0.5s;
+      transition-delay: 0.5s; }
+    .controlsCamera .control:nth-child(5) {
+      -webkit-transition-delay: 0.6s;
+      -khtml-transition-delay: 0.6s;
+      -moz-transition-delay: 0.6s;
+      -ms-transition-delay: 0.6s;
+      -o-transition-delay: 0.6s;
+      transition-delay: 0.6s; }
+    .controlsCamera .control:hover {
+      color: #111;
+      -webkit-text-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
+      -khtml-text-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
+      -moz-text-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
+      -ms-text-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
+      -o-text-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
+      text-shadow: 0 0 2px rgba(255, 255, 255, 0.4); }
+
+@keyframes go-down {
+  50% {
+    -webkit-transform: translatey(3px);
+    -khtml-transform: translatey(3px);
+    -moz-transform: translatey(3px);
+    -ms-transform: translatey(3px);
+    -o-transform: translatey(3px);
+    transform: translatey(3px); } }
+
+@-webkit-keyframes go-down {
+  50% {
+    -webkit-transform: translatey(3px);
+    -khtml-transform: translatey(3px);
+    -moz-transform: translatey(3px);
+    -ms-transform: translatey(3px);
+    -o-transform: translatey(3px);
+    transform: translatey(3px); } }
+
+@-moz-keyframes go-down {
+  50% {
+    -webkit-transform: translatey(3px);
+    -khtml-transform: translatey(3px);
+    -moz-transform: translatey(3px);
+    -ms-transform: translatey(3px);
+    -o-transform: translatey(3px);
+    transform: translatey(3px); } }
+
+@keyframes go-right {
+  50% {
+    -webkit-transform: translatex(3px);
+    -khtml-transform: translatex(3px);
+    -moz-transform: translatex(3px);
+    -ms-transform: translatex(3px);
+    -o-transform: translatex(3px);
+    transform: translatex(3px); } }
+
+@-webkit-keyframes go-right {
+  50% {
+    -webkit-transform: translatex(3px);
+    -khtml-transform: translatex(3px);
+    -moz-transform: translatex(3px);
+    -ms-transform: translatex(3px);
+    -o-transform: translatex(3px);
+    transform: translatex(3px); } }
+
+@-moz-keyframes go-right {
+  50% {
+    -webkit-transform: translatex(3px);
+    -khtml-transform: translatex(3px);
+    -moz-transform: translatex(3px);
+    -ms-transform: translatex(3px);
+    -o-transform: translatex(3px);
+    transform: translatex(3px); } }
+
+@-webkit-keyframes jump {
+  0% {
+    top: 0;
+    animation-timing-function: ease-in; }
+  50% {
+    top: 140px;
+    height: 140px;
+    animation-timing-function: ease-out; }
+  55% {
+    top: 160px;
+    height: 120px;
+    border-radius: 70px / 60px;
+    animation-timing-function: ease-in; }
+  65% {
+    top: 120px;
+    height: 140px;
+    border-radius: 70px;
+    animation-timing-function: ease-out; }
+  95% {
+    top: 0;
+    animation-timing-function: ease-in; }
+  100% {
+    top: 0;
+    animation-timing-function: ease-in; } }
+
+@-moz-keyframes jump {
+  0% {
+    top: 0;
+    animation-timing-function: ease-in; }
+  50% {
+    top: 140px;
+    height: 140px;
+    animation-timing-function: ease-out; }
+  55% {
+    top: 160px;
+    height: 120px;
+    border-radius: 70px / 60px;
+    animation-timing-function: ease-in; }
+  65% {
+    top: 120px;
+    height: 140px;
+    border-radius: 70px;
+    animation-timing-function: ease-out; }
+  95% {
+    top: 0;
+    animation-timing-function: ease-in; }
+  100% {
+    top: 0;
+    animation-timing-function: ease-in; } }
+
+@keyframes jump {
+  0% {
+    top: 0;
+    animation-timing-function: ease-in; }
+  50% {
+    top: 140px;
+    height: 140px;
+    animation-timing-function: ease-out; }
+  55% {
+    top: 160px;
+    height: 120px;
+    border-radius: 70px / 60px;
+    animation-timing-function: ease-in; }
+  65% {
+    top: 120px;
+    height: 140px;
+    border-radius: 70px;
+    animation-timing-function: ease-out; }
+  95% {
+    top: 0;
+    animation-timing-function: ease-in; }
+  100% {
+    top: 0;
+    animation-timing-function: ease-in; } }
+
+@-webkit-keyframes shrink {
+  0% {
+    bottom: 0;
+    margin-left: -30px;
+    width: 60px;
+    height: 75px;
+    background: rgba(20, 20, 20, 0.1);
+    box-shadow: 0px 0 20px 35px rgba(20, 20, 20, 0.1);
+    border-radius: 30px / 40px;
+    animation-timing-function: ease-in; }
+  50% {
+    bottom: 30px;
+    margin-left: -10px;
+    width: 20px;
+    height: 5px;
+    background: rgba(20, 20, 20, 0.3);
+    box-shadow: 0px 0 20px 35px rgba(20, 20, 20, 0.3);
+    border-radius: 20px / 20px;
+    animation-timing-function: ease-out; }
+  100% {
+    bottom: 0;
+    margin-left: -30px;
+    width: 60px;
+    height: 75px;
+    background: rgba(20, 20, 20, 0.1);
+    box-shadow: 0px 0 20px 35px rgba(20, 20, 20, 0.1);
+    border-radius: 30px / 40px;
+    animation-timing-function: ease-in; } }
+
+@-moz-keyframes shrink {
+  0% {
+    bottom: 0;
+    margin-left: -30px;
+    width: 60px;
+    height: 75px;
+    background: rgba(20, 20, 20, 0.1);
+    box-shadow: 0px 0 20px 35px rgba(20, 20, 20, 0.1);
+    border-radius: 30px / 40px;
+    animation-timing-function: ease-in; }
+  50% {
+    bottom: 30px;
+    margin-left: -10px;
+    width: 20px;
+    height: 5px;
+    background: rgba(20, 20, 20, 0.3);
+    box-shadow: 0px 0 20px 35px rgba(20, 20, 20, 0.3);
+    border-radius: 20px / 20px;
+    animation-timing-function: ease-out; }
+  100% {
+    bottom: 0;
+    margin-left: -30px;
+    width: 60px;
+    height: 75px;
+    background: rgba(20, 20, 20, 0.1);
+    box-shadow: 0px 0 20px 35px rgba(20, 20, 20, 0.1);
+    border-radius: 30px / 40px;
+    animation-timing-function: ease-in; } }
+
+@keyframes shrink {
+  0% {
+    bottom: 0;
+    margin-left: -30px;
+    width: 60px;
+    height: 75px;
+    background: rgba(20, 20, 20, 0.1);
+    box-shadow: 0px 0 20px 35px rgba(20, 20, 20, 0.1);
+    border-radius: 30px / 40px;
+    animation-timing-function: ease-in; }
+  50% {
+    bottom: 30px;
+    margin-left: -10px;
+    width: 20px;
+    height: 5px;
+    background: rgba(20, 20, 20, 0.3);
+    box-shadow: 0px 0 20px 35px rgba(20, 20, 20, 0.3);
+    border-radius: 20px / 20px;
+    animation-timing-function: ease-out; }
+  100% {
+    bottom: 0;
+    margin-left: -30px;
+    width: 60px;
+    height: 75px;
+    background: rgba(20, 20, 20, 0.1);
+    box-shadow: 0px 0 20px 35px rgba(20, 20, 20, 0.1);
+    border-radius: 30px / 40px;
+    animation-timing-function: ease-in; } }
+
+@-webkit-keyframes textCrazy {
+  0%, 100% {
+    -webkit-text-shadow: 0 0 3px #111, 2px 2px 3px #ddd, -2px -2px 3px #aaa, 2px -2px 3px #323232;
+    -khtml-text-shadow: 0 0 3px #111, 2px 2px 3px #ddd, -2px -2px 3px #aaa, 2px -2px 3px #323232;
+    -moz-text-shadow: 0 0 3px #111, 2px 2px 3px #ddd, -2px -2px 3px #aaa, 2px -2px 3px #323232;
+    -ms-text-shadow: 0 0 3px #111, 2px 2px 3px #ddd, -2px -2px 3px #aaa, 2px -2px 3px #323232;
+    -o-text-shadow: 0 0 3px #111, 2px 2px 3px #ddd, -2px -2px 3px #aaa, 2px -2px 3px #323232;
+    text-shadow: 0 0 3px #111, 2px 2px 3px #ddd, -2px -2px 3px #aaa, 2px -2px 3px #323232; }
+  5% {
+    -webkit-text-shadow: 0 0 3px #fdfdfd, 2px 2px 3px #111;
+    -khtml-text-shadow: 0 0 3px #fdfdfd, 2px 2px 3px #111;
+    -moz-text-shadow: 0 0 3px #fdfdfd, 2px 2px 3px #111;
+    -ms-text-shadow: 0 0 3px #fdfdfd, 2px 2px 3px #111;
+    -o-text-shadow: 0 0 3px #fdfdfd, 2px 2px 3px #111;
+    text-shadow: 0 0 3px #fdfdfd, 2px 2px 3px #111; } }
+
+@-moz-keyframes textCrazy {
+  0%, 100% {
+    -webkit-text-shadow: 0 0 3px #111, 2px 2px 3px #ddd, -2px -2px 3px #aaa, 2px -2px 3px #323232;
+    -khtml-text-shadow: 0 0 3px #111, 2px 2px 3px #ddd, -2px -2px 3px #aaa, 2px -2px 3px #323232;
+    -moz-text-shadow: 0 0 3px #111, 2px 2px 3px #ddd, -2px -2px 3px #aaa, 2px -2px 3px #323232;
+    -ms-text-shadow: 0 0 3px #111, 2px 2px 3px #ddd, -2px -2px 3px #aaa, 2px -2px 3px #323232;
+    -o-text-shadow: 0 0 3px #111, 2px 2px 3px #ddd, -2px -2px 3px #aaa, 2px -2px 3px #323232;
+    text-shadow: 0 0 3px #111, 2px 2px 3px #ddd, -2px -2px 3px #aaa, 2px -2px 3px #323232; }
+  5% {
+    -webkit-text-shadow: 0 0 3px #fdfdfd, 2px 2px 3px #111;
+    -khtml-text-shadow: 0 0 3px #fdfdfd, 2px 2px 3px #111;
+    -moz-text-shadow: 0 0 3px #fdfdfd, 2px 2px 3px #111;
+    -ms-text-shadow: 0 0 3px #fdfdfd, 2px 2px 3px #111;
+    -o-text-shadow: 0 0 3px #fdfdfd, 2px 2px 3px #111;
+    text-shadow: 0 0 3px #fdfdfd, 2px 2px 3px #111; } }
+
+@keyframes textCrazy {
+  0%, 100% {
+    -webkit-text-shadow: 0 0 3px #111, 2px 2px 3px #ddd, -2px -2px 3px #aaa, 2px -2px 3px #323232;
+    -khtml-text-shadow: 0 0 3px #111, 2px 2px 3px #ddd, -2px -2px 3px #aaa, 2px -2px 3px #323232;
+    -moz-text-shadow: 0 0 3px #111, 2px 2px 3px #ddd, -2px -2px 3px #aaa, 2px -2px 3px #323232;
+    -ms-text-shadow: 0 0 3px #111, 2px 2px 3px #ddd, -2px -2px 3px #aaa, 2px -2px 3px #323232;
+    -o-text-shadow: 0 0 3px #111, 2px 2px 3px #ddd, -2px -2px 3px #aaa, 2px -2px 3px #323232;
+    text-shadow: 0 0 3px #111, 2px 2px 3px #ddd, -2px -2px 3px #aaa, 2px -2px 3px #323232; }
+  5% {
+    -webkit-text-shadow: 0 0 3px #fdfdfd, 2px 2px 3px #111;
+    -khtml-text-shadow: 0 0 3px #fdfdfd, 2px 2px 3px #111;
+    -moz-text-shadow: 0 0 3px #fdfdfd, 2px 2px 3px #111;
+    -ms-text-shadow: 0 0 3px #fdfdfd, 2px 2px 3px #111;
+    -o-text-shadow: 0 0 3px #fdfdfd, 2px 2px 3px #111;
+    text-shadow: 0 0 3px #fdfdfd, 2px 2px 3px #111; } }
+
+@-webkit-keyframes groundPerspective {
+  0% {
+    -webkit-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn);
+    -khtml-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn);
+    -moz-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn);
+    -ms-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn);
+    -o-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn);
+    transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn); }
+  100% {
+    -webkit-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(1turn);
+    -khtml-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(1turn);
+    -moz-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(1turn);
+    -ms-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(1turn);
+    -o-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(1turn);
+    transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(1turn); } }
+
+@-moz-keyframes groundPerspective {
+  0% {
+    -webkit-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn);
+    -khtml-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn);
+    -moz-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn);
+    -ms-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn);
+    -o-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn);
+    transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn); }
+  100% {
+    -webkit-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(1turn);
+    -khtml-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(1turn);
+    -moz-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(1turn);
+    -ms-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(1turn);
+    -o-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(1turn);
+    transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(1turn); } }
+
+@keyframes groundPerspective {
+  0% {
+    -webkit-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn);
+    -khtml-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn);
+    -moz-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn);
+    -ms-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn);
+    -o-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn);
+    transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(0turn); }
+  100% {
+    -webkit-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(1turn);
+    -khtml-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(1turn);
+    -moz-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(1turn);
+    -ms-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(1turn);
+    -o-transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(1turn);
+    transform: rotateX(91deg) translate3d(10px, -180px, -127px) rotate(1turn); } }
+
+@media (max-height: 670px) {
+  .field {
+    -webkit-transform: rotateX(0deg) translatez(-300px);
+    -khtml-transform: rotateX(0deg) translatez(-300px);
+    -moz-transform: rotateX(0deg) translatez(-300px);
+    -ms-transform: rotateX(0deg) translatez(-300px);
+    -o-transform: rotateX(0deg) translatez(-300px);
+    transform: rotateX(0deg) translatez(-300px); } }
+
+@media (max-width: 800px) {
+  .field {
+    -webkit-transform: translate3d(0, 0, -500px);
+    -khtml-transform: translate3d(0, 0, -500px);
+    -moz-transform: translate3d(0, 0, -500px);
+    -ms-transform: translate3d(0, 0, -500px);
+    -o-transform: translate3d(0, 0, -500px);
+    transform: translate3d(0, 0, -500px); }
+    .field._3d.front {
+      -webkit-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(0deg);
+      -khtml-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(0deg);
+      -moz-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(0deg);
+      -ms-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(0deg);
+      -o-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(0deg);
+      transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(0deg); }
+    .field._3d.back {
+      -webkit-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(-180deg);
+      -khtml-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(-180deg);
+      -moz-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(-180deg);
+      -ms-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(-180deg);
+      -o-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(-180deg);
+      transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(-180deg); }
+    .field._3d.side_right {
+      -webkit-transform: rotateX(65deg) translate3d(0, -300px, -200px) rotate(90deg);
+      -khtml-transform: rotateX(65deg) translate3d(0, -300px, -200px) rotate(90deg);
+      -moz-transform: rotateX(65deg) translate3d(0, -300px, -200px) rotate(90deg);
+      -ms-transform: rotateX(65deg) translate3d(0, -300px, -200px) rotate(90deg);
+      -o-transform: rotateX(65deg) translate3d(0, -300px, -200px) rotate(90deg);
+      transform: rotateX(65deg) translate3d(0, -300px, -200px) rotate(90deg); }
+    .field._3d.side_left {
+      -webkit-transform: rotateX(65deg) translate3d(0, -300px, -200px) rotate(-90deg);
+      -khtml-transform: rotateX(65deg) translate3d(0, -300px, -200px) rotate(-90deg);
+      -moz-transform: rotateX(65deg) translate3d(0, -300px, -200px) rotate(-90deg);
+      -ms-transform: rotateX(65deg) translate3d(0, -300px, -200px) rotate(-90deg);
+      -o-transform: rotateX(65deg) translate3d(0, -300px, -200px) rotate(-90deg);
+      transform: rotateX(65deg) translate3d(0, -300px, -200px) rotate(-90deg); }
+  .controlsCamera {
+    -webkit-transform: scale(0.5);
+    -khtml-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5); }
+    .controlsCamera:hover + .field {
+      -webkit-transform: rotateX(0deg) translate3d(0, 0px, -400px) rotate(0deg);
+      -khtml-transform: rotateX(0deg) translate3d(0, 0px, -400px) rotate(0deg);
+      -moz-transform: rotateX(0deg) translate3d(0, 0px, -400px) rotate(0deg);
+      -ms-transform: rotateX(0deg) translate3d(0, 0px, -400px) rotate(0deg);
+      -o-transform: rotateX(0deg) translate3d(0, 0px, -400px) rotate(0deg);
+      transform: rotateX(0deg) translate3d(0, 0px, -400px) rotate(0deg); }
+      .controlsCamera:hover + .field._3d.front {
+        -webkit-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(0deg);
+        -khtml-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(0deg);
+        -moz-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(0deg);
+        -ms-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(0deg);
+        -o-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(0deg);
+        transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(0deg); }
+      .controlsCamera:hover + .field._3d.back {
+        -webkit-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(-180deg);
+        -khtml-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(-180deg);
+        -moz-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(-180deg);
+        -ms-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(-180deg);
+        -o-transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(-180deg);
+        transform: rotateX(50deg) translate3d(0, -300px, -200px) rotate(-180deg); }
+      .controlsCamera:hover + .field._3d.side_right {
+        -webkit-transform: rotateX(65deg) translate3d(0, -250px, -150px) rotate(90deg);
+        -khtml-transform: rotateX(65deg) translate3d(0, -250px, -150px) rotate(90deg);
+        -moz-transform: rotateX(65deg) translate3d(0, -250px, -150px) rotate(90deg);
+        -ms-transform: rotateX(65deg) translate3d(0, -250px, -150px) rotate(90deg);
+        -o-transform: rotateX(65deg) translate3d(0, -250px, -150px) rotate(90deg);
+        transform: rotateX(65deg) translate3d(0, -250px, -150px) rotate(90deg); }
+      .controlsCamera:hover + .field._3d.side_left {
+        -webkit-transform: rotateX(65deg) translate3d(0, -250px, -150px) rotate(-90deg);
+        -khtml-transform: rotateX(65deg) translate3d(0, -250px, -150px) rotate(-90deg);
+        -moz-transform: rotateX(65deg) translate3d(0, -250px, -150px) rotate(-90deg);
+        -ms-transform: rotateX(65deg) translate3d(0, -250px, -150px) rotate(-90deg);
+        -o-transform: rotateX(65deg) translate3d(0, -250px, -150px) rotate(-90deg);
+        transform: rotateX(65deg) translate3d(0, -250px, -150px) rotate(-90deg); }
+  .panel, .container_button {
+    display: none; }
+  .settingsLocalTeam, .settingsVisitantTeam {
+    bottom: 1rem; }
+  .settingsLocalTeam {
+    left: 1rem; }
+  .settingsVisitantTeam {
+    right: 1rem; }
+  .loader .ballContent {
+    -webkit-transform: scale(0.7);
+    -khtml-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    -o-transform: scale(0.7);
+    transform: scale(0.7); } }
+
+@media (max-width: 600px) {
+  .field {
+    -webkit-transform: translate3d(0, 0, -600px);
+    -khtml-transform: translate3d(0, 0, -600px);
+    -moz-transform: translate3d(0, 0, -600px);
+    -ms-transform: translate3d(0, 0, -600px);
+    -o-transform: translate3d(0, 0, -600px);
+    transform: translate3d(0, 0, -600px); }
+    .field._3d.front {
+      -webkit-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(0deg);
+      -khtml-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(0deg);
+      -moz-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(0deg);
+      -ms-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(0deg);
+      -o-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(0deg);
+      transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(0deg); }
+    .field._3d.back {
+      -webkit-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(-180deg);
+      -khtml-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(-180deg);
+      -moz-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(-180deg);
+      -ms-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(-180deg);
+      -o-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(-180deg);
+      transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(-180deg); }
+    .field._3d.side_right {
+      -webkit-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(90deg);
+      -khtml-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(90deg);
+      -moz-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(90deg);
+      -ms-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(90deg);
+      -o-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(90deg);
+      transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(90deg); }
+    .field._3d.side_left {
+      -webkit-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(-90deg);
+      -khtml-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(-90deg);
+      -moz-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(-90deg);
+      -ms-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(-90deg);
+      -o-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(-90deg);
+      transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(-90deg); }
+  .controlsCamera:hover + .field {
+    -webkit-transform: rotateX(0deg) translate3d(0, 0px, -500px) rotate(0deg);
+    -khtml-transform: rotateX(0deg) translate3d(0, 0px, -500px) rotate(0deg);
+    -moz-transform: rotateX(0deg) translate3d(0, 0px, -500px) rotate(0deg);
+    -ms-transform: rotateX(0deg) translate3d(0, 0px, -500px) rotate(0deg);
+    -o-transform: rotateX(0deg) translate3d(0, 0px, -500px) rotate(0deg);
+    transform: rotateX(0deg) translate3d(0, 0px, -500px) rotate(0deg); }
+    .controlsCamera:hover + .field._3d.front {
+      -webkit-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(0deg);
+      -khtml-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(0deg);
+      -moz-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(0deg);
+      -ms-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(0deg);
+      -o-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(0deg);
+      transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(0deg); }
+    .controlsCamera:hover + .field._3d.back {
+      -webkit-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(-180deg);
+      -khtml-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(-180deg);
+      -moz-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(-180deg);
+      -ms-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(-180deg);
+      -o-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(-180deg);
+      transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(-180deg); }
+    .controlsCamera:hover + .field._3d.side_right {
+      -webkit-transform: rotateX(65deg) translate3d(0, -350px, -250px) rotate(90deg);
+      -khtml-transform: rotateX(65deg) translate3d(0, -350px, -250px) rotate(90deg);
+      -moz-transform: rotateX(65deg) translate3d(0, -350px, -250px) rotate(90deg);
+      -ms-transform: rotateX(65deg) translate3d(0, -350px, -250px) rotate(90deg);
+      -o-transform: rotateX(65deg) translate3d(0, -350px, -250px) rotate(90deg);
+      transform: rotateX(65deg) translate3d(0, -350px, -250px) rotate(90deg); }
+    .controlsCamera:hover + .field._3d.side_left {
+      -webkit-transform: rotateX(65deg) translate3d(0, -350px, -250px) rotate(-90deg);
+      -khtml-transform: rotateX(65deg) translate3d(0, -350px, -250px) rotate(-90deg);
+      -moz-transform: rotateX(65deg) translate3d(0, -350px, -250px) rotate(-90deg);
+      -ms-transform: rotateX(65deg) translate3d(0, -350px, -250px) rotate(-90deg);
+      -o-transform: rotateX(65deg) translate3d(0, -350px, -250px) rotate(-90deg);
+      transform: rotateX(65deg) translate3d(0, -350px, -250px) rotate(-90deg); } }
+
+@media (max-width: 500px) {
+  .field {
+    -webkit-transform: translate3d(-50px, 0, -600px);
+    -khtml-transform: translate3d(-50px, 0, -600px);
+    -moz-transform: translate3d(-50px, 0, -600px);
+    -ms-transform: translate3d(-50px, 0, -600px);
+    -o-transform: translate3d(-50px, 0, -600px);
+    transform: translate3d(-50px, 0, -600px); }
+    .field._3d.front {
+      -webkit-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(0deg);
+      -khtml-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(0deg);
+      -moz-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(0deg);
+      -ms-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(0deg);
+      -o-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(0deg);
+      transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(0deg); }
+    .field._3d.back {
+      -webkit-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(-180deg);
+      -khtml-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(-180deg);
+      -moz-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(-180deg);
+      -ms-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(-180deg);
+      -o-transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(-180deg);
+      transform: rotateX(50deg) translate3d(0, -500px, -400px) rotate(-180deg); }
+    .field._3d.side_right {
+      -webkit-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(90deg);
+      -khtml-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(90deg);
+      -moz-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(90deg);
+      -ms-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(90deg);
+      -o-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(90deg);
+      transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(90deg); }
+    .field._3d.side_left {
+      -webkit-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(-90deg);
+      -khtml-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(-90deg);
+      -moz-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(-90deg);
+      -ms-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(-90deg);
+      -o-transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(-90deg);
+      transform: rotateX(65deg) translate3d(0, -400px, -300px) rotate(-90deg); }
+  .controlsCamera:hover + .field {
+    -webkit-transform: rotateX(0deg) translate3d(-50px, 0px, -500px) rotate(0deg);
+    -khtml-transform: rotateX(0deg) translate3d(-50px, 0px, -500px) rotate(0deg);
+    -moz-transform: rotateX(0deg) translate3d(-50px, 0px, -500px) rotate(0deg);
+    -ms-transform: rotateX(0deg) translate3d(-50px, 0px, -500px) rotate(0deg);
+    -o-transform: rotateX(0deg) translate3d(-50px, 0px, -500px) rotate(0deg);
+    transform: rotateX(0deg) translate3d(-50px, 0px, -500px) rotate(0deg); }
+    .controlsCamera:hover + .field._3d.front {
+      -webkit-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(0deg);
+      -khtml-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(0deg);
+      -moz-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(0deg);
+      -ms-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(0deg);
+      -o-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(0deg);
+      transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(0deg); }
+    .controlsCamera:hover + .field._3d.back {
+      -webkit-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(-180deg);
+      -khtml-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(-180deg);
+      -moz-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(-180deg);
+      -ms-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(-180deg);
+      -o-transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(-180deg);
+      transform: rotateX(50deg) translate3d(0, -400px, -300px) rotate(-180deg); }
+    .controlsCamera:hover + .field._3d.side_right {
+      -webkit-transform: rotateX(65deg) translate3d(0, -450px, -350px) rotate(90deg);
+      -khtml-transform: rotateX(65deg) translate3d(0, -450px, -350px) rotate(90deg);
+      -moz-transform: rotateX(65deg) translate3d(0, -450px, -350px) rotate(90deg);
+      -ms-transform: rotateX(65deg) translate3d(0, -450px, -350px) rotate(90deg);
+      -o-transform: rotateX(65deg) translate3d(0, -450px, -350px) rotate(90deg);
+      transform: rotateX(65deg) translate3d(0, -450px, -350px) rotate(90deg); }
+    .controlsCamera:hover + .field._3d.side_left {
+      -webkit-transform: rotateX(65deg) translate3d(0, -450px, -350px) rotate(-90deg);
+      -khtml-transform: rotateX(65deg) translate3d(0, -450px, -350px) rotate(-90deg);
+      -moz-transform: rotateX(65deg) translate3d(0, -450px, -350px) rotate(-90deg);
+      -ms-transform: rotateX(65deg) translate3d(0, -450px, -350px) rotate(-90deg);
+      -o-transform: rotateX(65deg) translate3d(0, -450px, -350px) rotate(-90deg);
+      transform: rotateX(65deg) translate3d(0, -450px, -350px) rotate(-90deg); } }
+
+@media (max-width: 340px) {
+  .field {
+    -webkit-transform: translate3d(-100px, 0, -600px) scale(0.7);
+    -khtml-transform: translate3d(-100px, 0, -600px) scale(0.7);
+    -moz-transform: translate3d(-100px, 0, -600px) scale(0.7);
+    -ms-transform: translate3d(-100px, 0, -600px) scale(0.7);
+    -o-transform: translate3d(-100px, 0, -600px) scale(0.7);
+    transform: translate3d(-100px, 0, -600px) scale(0.7); }
+    .field._3d.front {
+      -webkit-transform: rotateX(50deg) translate3d(-90px, -500px, -400px) rotate(0deg) scale(0.7);
+      -khtml-transform: rotateX(50deg) translate3d(-90px, -500px, -400px) rotate(0deg) scale(0.7);
+      -moz-transform: rotateX(50deg) translate3d(-90px, -500px, -400px) rotate(0deg) scale(0.7);
+      -ms-transform: rotateX(50deg) translate3d(-90px, -500px, -400px) rotate(0deg) scale(0.7);
+      -o-transform: rotateX(50deg) translate3d(-90px, -500px, -400px) rotate(0deg) scale(0.7);
+      transform: rotateX(50deg) translate3d(-90px, -500px, -400px) rotate(0deg) scale(0.7); }
+    .field._3d.back {
+      -webkit-transform: rotateX(50deg) translate3d(-90px, -500px, -400px) rotate(-180deg) scale(0.7);
+      -khtml-transform: rotateX(50deg) translate3d(-90px, -500px, -400px) rotate(-180deg) scale(0.7);
+      -moz-transform: rotateX(50deg) translate3d(-90px, -500px, -400px) rotate(-180deg) scale(0.7);
+      -ms-transform: rotateX(50deg) translate3d(-90px, -500px, -400px) rotate(-180deg) scale(0.7);
+      -o-transform: rotateX(50deg) translate3d(-90px, -500px, -400px) rotate(-180deg) scale(0.7);
+      transform: rotateX(50deg) translate3d(-90px, -500px, -400px) rotate(-180deg) scale(0.7); }
+    .field._3d.side_right {
+      -webkit-transform: rotateX(65deg) translate3d(-90px, -400px, -300px) rotate(90deg) scale(0.7);
+      -khtml-transform: rotateX(65deg) translate3d(-90px, -400px, -300px) rotate(90deg) scale(0.7);
+      -moz-transform: rotateX(65deg) translate3d(-90px, -400px, -300px) rotate(90deg) scale(0.7);
+      -ms-transform: rotateX(65deg) translate3d(-90px, -400px, -300px) rotate(90deg) scale(0.7);
+      -o-transform: rotateX(65deg) translate3d(-90px, -400px, -300px) rotate(90deg) scale(0.7);
+      transform: rotateX(65deg) translate3d(-90px, -400px, -300px) rotate(90deg) scale(0.7); }
+    .field._3d.side_left {
+      -webkit-transform: rotateX(65deg) translate3d(-90px, -400px, -300px) rotate(-90deg) scale(0.7);
+      -khtml-transform: rotateX(65deg) translate3d(-90px, -400px, -300px) rotate(-90deg) scale(0.7);
+      -moz-transform: rotateX(65deg) translate3d(-90px, -400px, -300px) rotate(-90deg) scale(0.7);
+      -ms-transform: rotateX(65deg) translate3d(-90px, -400px, -300px) rotate(-90deg) scale(0.7);
+      -o-transform: rotateX(65deg) translate3d(-90px, -400px, -300px) rotate(-90deg) scale(0.7);
+      transform: rotateX(65deg) translate3d(-90px, -400px, -300px) rotate(-90deg) scale(0.7); }
+  .controlsCamera:hover + .field {
+    -webkit-transform: rotateX(0deg) translate3d(-100px, 0px, -500px) rotate(0deg) scale(0.7);
+    -khtml-transform: rotateX(0deg) translate3d(-100px, 0px, -500px) rotate(0deg) scale(0.7);
+    -moz-transform: rotateX(0deg) translate3d(-100px, 0px, -500px) rotate(0deg) scale(0.7);
+    -ms-transform: rotateX(0deg) translate3d(-100px, 0px, -500px) rotate(0deg) scale(0.7);
+    -o-transform: rotateX(0deg) translate3d(-100px, 0px, -500px) rotate(0deg) scale(0.7);
+    transform: rotateX(0deg) translate3d(-100px, 0px, -500px) rotate(0deg) scale(0.7); }
+    .controlsCamera:hover + .field._3d.front {
+      -webkit-transform: rotateX(50deg) translate3d(-90px, -400px, -300px) rotate(0deg) scale(0.7);
+      -khtml-transform: rotateX(50deg) translate3d(-90px, -400px, -300px) rotate(0deg) scale(0.7);
+      -moz-transform: rotateX(50deg) translate3d(-90px, -400px, -300px) rotate(0deg) scale(0.7);
+      -ms-transform: rotateX(50deg) translate3d(-90px, -400px, -300px) rotate(0deg) scale(0.7);
+      -o-transform: rotateX(50deg) translate3d(-90px, -400px, -300px) rotate(0deg) scale(0.7);
+      transform: rotateX(50deg) translate3d(-90px, -400px, -300px) rotate(0deg) scale(0.7); }
+    .controlsCamera:hover + .field._3d.back {
+      -webkit-transform: rotateX(50deg) translate3d(-90px, -400px, -300px) rotate(-180deg) scale(0.7);
+      -khtml-transform: rotateX(50deg) translate3d(-90px, -400px, -300px) rotate(-180deg) scale(0.7);
+      -moz-transform: rotateX(50deg) translate3d(-90px, -400px, -300px) rotate(-180deg) scale(0.7);
+      -ms-transform: rotateX(50deg) translate3d(-90px, -400px, -300px) rotate(-180deg) scale(0.7);
+      -o-transform: rotateX(50deg) translate3d(-90px, -400px, -300px) rotate(-180deg) scale(0.7);
+      transform: rotateX(50deg) translate3d(-90px, -400px, -300px) rotate(-180deg) scale(0.7); }
+    .controlsCamera:hover + .field._3d.side_right {
+      -webkit-transform: rotateX(65deg) translate3d(-90px, -450px, -350px) rotate(90deg) scale(0.7);
+      -khtml-transform: rotateX(65deg) translate3d(-90px, -450px, -350px) rotate(90deg) scale(0.7);
+      -moz-transform: rotateX(65deg) translate3d(-90px, -450px, -350px) rotate(90deg) scale(0.7);
+      -ms-transform: rotateX(65deg) translate3d(-90px, -450px, -350px) rotate(90deg) scale(0.7);
+      -o-transform: rotateX(65deg) translate3d(-90px, -450px, -350px) rotate(90deg) scale(0.7);
+      transform: rotateX(65deg) translate3d(-90px, -450px, -350px) rotate(90deg) scale(0.7); }
+    .controlsCamera:hover + .field._3d.side_left {
+      -webkit-transform: rotateX(65deg) translate3d(-90px, -450px, -350px) rotate(-90deg) scale(0.7);
+      -khtml-transform: rotateX(65deg) translate3d(-90px, -450px, -350px) rotate(-90deg) scale(0.7);
+      -moz-transform: rotateX(65deg) translate3d(-90px, -450px, -350px) rotate(-90deg) scale(0.7);
+      -ms-transform: rotateX(65deg) translate3d(-90px, -450px, -350px) rotate(-90deg) scale(0.7);
+      -o-transform: rotateX(65deg) translate3d(-90px, -450px, -350px) rotate(-90deg) scale(0.7);
+      transform: rotateX(65deg) translate3d(-90px, -450px, -350px) rotate(-90deg) scale(0.7); } }
