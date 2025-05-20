@@ -173,8 +173,34 @@
       </div>
     </div>
     <div class="top-icons">
-      <span id="coins">🪙 500</span>
-      <span>⚙️</span>
+      <div class="topbar">
+  Coins: <span id="coinDisplay"></span>
+</div>
+
+<script>
+  // On page load, show saved coins
+  document.addEventListener("DOMContentLoaded", () => {
+    let coins = localStorage.getItem("coins");
+
+    // If not already stored, set to default (e.g., 1000)
+    if (!coins) {
+      coins = 1000;
+      localStorage.setItem("coins", coins);
+    }
+
+    // Display the coins
+    document.getElementById("coinDisplay").textContent = coins;
+  });
+</script>
+     <button onclick="toggleSettings()" style="position: absolute; top: 10px; right: 10px;">⚙️</button>
+
+<div id="settingsMenu" style="display: none; position: absolute; top: 50px; right: 10px; background: white; border: 1px solid #ccc; padding: 10px; z-index: 999;">
+  <label>
+    <input type="checkbox" id="soundToggle" />
+    Sound On
+  </label><br>
+  <button onclick="resetData()">Reset Game</button>
+</div>
       <span id="musicToggle" title="Toggle Music">🔊</span>
     </div>
   </div>
@@ -189,8 +215,7 @@
 
   <!-- Play Menu -->
   <div class="menu" id="playMenu">
-    <a href="./ai/index.html"><b>VS AI</b></a>
-    
+    <button>VS AI</button>
     <button>VS Multiplayer</button>
     <button>Training</button>
   </div>
@@ -214,6 +239,8 @@ const savedUsername = localStorage.getItem('username');
 if (savedUsername) {
   usernameDisplay.textContent = savedUsername;
 }
+  
+  
 
     // Load saved logo from localStorage
     window.addEventListener('load', () => {
@@ -260,5 +287,30 @@ if (savedUsername) {
       });
     });
   </script>
+  <script>
+  function toggleSettings() {
+    const menu = document.getElementById("settingsMenu");
+    menu.style.display = menu.style.display === "none" ? "block" : "none";
+  }
+
+  // Load sound setting
+  window.addEventListener("DOMContentLoaded", () => {
+    const soundOn = localStorage.getItem("sound") !== "off";
+    document.getElementById("soundToggle").checked = soundOn;
+  });
+
+  // Save sound setting
+  document.getElementById("soundToggle").addEventListener("change", function() {
+    localStorage.setItem("sound", this.checked ? "on" : "off");
+  });
+
+  // Reset game data
+  function resetData() {
+    if (confirm("Are you sure you want to reset all game data?")) {
+      localStorage.clear();
+      window.location.href = "load1.html";
+    }
+  }
+</script>
 </body>
 </html>
